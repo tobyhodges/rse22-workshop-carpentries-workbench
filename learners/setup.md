@@ -13,6 +13,7 @@ and choose a mirror close to your location.)
 Participants will also need a GitHub account with credentials set up 
 to enable pushing changes to GitHub. 
 Choose one of the following two options for these credentials:
+
 1. SSH keys - 
    the Software Carpentry _Version Control with Git_ lesson includes 
    [a guide for how to set up SSH keys for connecting to GitHub](https://swcarpentry.github.io/git-novice/07-github/index.html#3-ssh-background-and-setup)
