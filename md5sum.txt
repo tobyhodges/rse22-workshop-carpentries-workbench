@@ -8,5 +8,5 @@
 "episodes/02-lesson-design.md" "ac6fb754f647f3b6fd7e2eb9769cb4c0" "site/built/02-lesson-design.md" "2022-08-25"
 "episodes/03-workbench.md" "b7f660bf5a6b7a49d91832e4eff4478d" "site/built/03-workbench.md" "2022-08-25"
 "instructors/instructor-notes.md" "60b93493cf1da06dfd63255d73854461" "site/built/instructor-notes.md" "2022-07-20"
-"learners/setup.md" "528e4da0c271d29ba9e9533e264cb2fd" "site/built/setup.md" "2022-08-25"
+"learners/setup.md" "2b7b8e832271761c874d0c81a578415b" "site/built/setup.md" "2022-08-25"
 "profiles/learner-profiles.md" "60b93493cf1da06dfd63255d73854461" "site/built/learner-profiles.md" "2022-07-20"
