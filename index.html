@@ -135,20 +135,12 @@
                   <div class="accordion accordion-flush" id="accordionFlushcurrent">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-headingcurrent">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecurrent" aria-expanded="true" aria-controls="flush-collapsecurrent">
         <span class="visually-hidden">Current Chapter</span>
         <span class="current-chapter">
         Summary and Setup
         </span>
-      </button>
+      
     </div><!--/div.accordion-header-->
-        
-    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
-      <div class="accordion-body">
-        <ul><li><a href="#data-sets">Data Sets</a></li>
-<li><a href="#software-setup">Software Setup</a></li>
-        </ul></div><!--/div.accordion-body-->
-    </div><!--/div.accordion-collapse-->
         
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
@@ -165,7 +157,16 @@
 <div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading3">
-        <a href="07-infrastructure.html">2. The Carpentries Workbench</a>
+        <a href="02-lesson-design.html">2. A Collaborative Lesson Design Process</a>
+    </div><!--/div.accordion-header-->
+        
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush4">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading4">
+        <a href="03-workbench.html">3. The Carpentries Workbench</a>
     </div><!--/div.accordion-header-->
         
   </div><!--/div.accordion-item-->
@@ -241,71 +242,15 @@ any links that you are not going to use.
  -->
 
 
-      <section id="setup"><p>Setup instructions live in this document. Please specify the tools and the data sets the Learner needs to have installed.</p>
-<section id="data-sets"><h2 class="section-heading">Data Sets<a class="anchor" aria-label="anchor" href="#data-sets"></a>
-</h2>
-<hr class="half-width"><p>Download the <a href="data/data.zip">data zip file</a> and unzip it to your Desktop</p>
-</section><section id="software-setup"><h2 class="section-heading">Software Setup<a class="anchor" aria-label="anchor" href="#software-setup"></a>
-</h2>
-<hr class="half-width"><div id="discussion1" class="callout discussion">
-<div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
-</div>
-<div id="details" class="callout-inner">
-<h3 class="callout-title">Details<a class="anchor" aria-label="anchor" href="#details"></a>
-</h3>
-<div class="callout-content">
-<p>Setup for different systems can be presented in dropdown menus via a <code>solution</code> tag. They will join to this discussion block, so you can give a general overview of the software used in this lesson here and fill out the individual operating systems (and potentially add more, e.g. online setup) in the solutions blocks.</p>
-</div>
-</div>
-</div>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1">
-  Windows
-  </h4>
-</button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
-<div class="accordion-body">
-<p>Use PuTTY</p>
-</div>
-</div>
-</div>
-</div>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2">
-  MacOS
-  </h4>
-</button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
-<div class="accordion-body">
-<p>Use Terminal.app</p>
-</div>
-</div>
-</div>
-</div>
-<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
-  <h4 class="accordion-header" id="headingSolution3">
-  Linux
-  </h4>
-</button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
-<div class="accordion-body">
-<p>Use Terminal</p>
-</div>
-</div>
-</div>
-</div>
+      <section id="setup"><p>To follow the workshop, participants will need to bring a laptop with a working <a href="https://www.rstudio.com/products/rstudio/download/" class="external-link">installation of RStudio</a> and <a href="https://www.r-project.org/" class="external-link">R version 4.1 or higher</a>. (To download and install R, follow the link to <a href="https://www.r-project.org/" class="external-link uri">https://www.r-project.org/</a>, follow the “CRAN” link near the top-left of that page, and choose a mirror close to your location.)</p>
+<p>Participants will also need a GitHub account with credentials set up to enable pushing changes to GitHub. Choose one of the following two options for these credentials: 1. SSH keys - the Software Carpentry <em>Version Control with Git</em> lesson includes <a href="https://swcarpentry.github.io/git-novice/07-github/index.html#3-ssh-background-and-setup" class="external-link">a guide for how to set up SSH keys for connecting to GitHub</a> 2. a personal access token - <em>Happy Git with R</em> provides <a href="https://happygitwithr.com/https-pat.html" class="external-link">a guide for how to set up an access token for GitHub with R</a></p>
 <!-- 
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use. 
  -->
-</section></section></main><nav class="bottom-pagination mx-md-4" aria-label="Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
+
+
+      </section></main><nav class="bottom-pagination mx-md-4" aria-label="Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link float-end" href="01-introduction.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
@@ -349,8 +294,8 @@ any links that you are not going to use.
   "url": "https://tobyhodges.github.io/rse22-workshop-carpentries-workbench/index.html",
   "identifier": "https://tobyhodges.github.io/rse22-workshop-carpentries-workbench/index.html",
   "dateCreated": "2022-07-20",
-  "dateModified": "2022-08-24",
-  "datePublished": "2022-08-24"
+  "dateModified": "2022-08-25",
+  "datePublished": "2022-08-25"
 }
 
   </script><script>
