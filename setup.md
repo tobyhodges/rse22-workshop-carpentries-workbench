@@ -2,48 +2,20 @@
 title: Setup
 ---
 
-Setup instructions live in this document. Please specify the tools and the data
-sets the Learner needs to have installed.
+To follow the workshop, participants will need to bring a laptop with 
+a working [installation of RStudio](https://www.rstudio.com/products/rstudio/download/) 
+and [R version 4.1 or higher](https://www.r-project.org/).
+(To download and install R, 
+follow the link to https://www.r-project.org/, 
+follow the “CRAN” link near the top-left of that page, 
+and choose a mirror close to your location.)
 
-## Data Sets
-
-Download the [data zip file](data/data.zip) and unzip it to your Desktop
-
-## Software Setup
-
-::::::::::::::::::::::::::::::::::::::: discussion
-
-### Details
-
-Setup for different systems can be presented in dropdown menus via a `solution`
-tag. They will join to this discussion block, so you can give a general overview
-of the software used in this lesson here and fill out the individual operating
-systems (and potentially add more, e.g. online setup) in the solutions blocks.
-
-:::::::::::::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::: solution
-
-### Windows
-
-Use PuTTY
-
-:::::::::::::::::::::::::
-
-:::::::::::::::: solution
-
-### MacOS
-
-Use Terminal.app
-
-:::::::::::::::::::::::::
-
-
-:::::::::::::::: solution
-
-### Linux
-
-Use Terminal
-
-:::::::::::::::::::::::::
-
+Participants will also need a GitHub account with credentials set up 
+to enable pushing changes to GitHub. 
+Choose one of the following two options for these credentials:
+1. SSH keys - 
+   the Software Carpentry _Version Control with Git_ lesson includes 
+   [a guide for how to set up SSH keys for connecting to GitHub](https://swcarpentry.github.io/git-novice/07-github/index.html#3-ssh-background-and-setup)
+2. a personal access token -
+   _Happy Git with R_ provides 
+   [a guide for how to set up an access token for GitHub with R](https://happygitwithr.com/https-pat.html)
