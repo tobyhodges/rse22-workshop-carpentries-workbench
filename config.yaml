@@ -44,8 +44,7 @@ contact: tobyhodges@carpentries.org
 # Example -------------
 # 
 # episodes:
-# - introduction.md
-# - first-steps.md
+# 
 # 
 # learners:
 # - setup.md
@@ -59,6 +58,11 @@ contact: tobyhodges@carpentries.org
 
 # Order of episodes in your lesson 
 episodes: 
+- introduction.md
+- lesson-design.md
+- workbench.md
+- lesson-credit.md
+
 
 # Information for Learners
 learners: 
