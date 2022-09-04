@@ -171,12 +171,19 @@
 <div class="accordion accordion-flush" id="accordionFlushcurrent">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-headingcurrent">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecurrent" aria-expanded="true" aria-controls="flush-collapsecurrent">
         <span class="visually-hidden">Current Chapter</span>
         <span class="current-chapter">
         Crediting Contributions to Lessons
         </span>
-      
+      </button>
     </div><!--/div.accordion-header-->
+        
+    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
+      <div class="accordion-body">
+        <ul><li><a href="#valuing-all-contributions">Valuing All Contributions</a></li>
+        </ul></div><!--/div.accordion-body-->
+    </div><!--/div.accordion-collapse-->
         
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
@@ -232,7 +239,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Crediting Contributions to Lessons</h1>
-        <p> Last updated on 2022-09-02 | <a href="https://github.com/tobyhodges/rse22-workshop-carpentries-workbench/edit/main/episodes/lesson-credit.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <p> Last updated on 2022-09-04 | <a href="https://github.com/tobyhodges/rse22-workshop-carpentries-workbench/edit/main/episodes/lesson-credit.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 20 minutes </p>
         
         <div class="text-end">
@@ -263,7 +270,64 @@
 </div>
 </div>
 </div>
-<p>TODO</p>
+<section id="valuing-all-contributions"><h2 class="section-heading">Valuing All Contributions<a class="anchor" aria-label="anchor" href="#valuing-all-contributions"></a>
+</h2>
+<hr class="half-width"><ul><li>The Carpentries community is very diverse - many people who take on many different roles</li>
+<li>One of our core values is that we Value All Contributions</li>
+<li>Lesson development process provides opportunity for people to write lessons, provide feedback on them, maintain them, contribute fixes and enhancements to them, and more</li>
+<li>It can be difficult to capture all of this, e.g. GitHub only pays attention to commits in the list of contributors. Misses people who open or contribute to issues</li>
+<li>We want to better capture all of the contributions that make a lesson exist, and make that information more visible.</li>
+<li>With that in mind, would like to gather feedback from you all about a new page we want to introduce to lessons that use the Workbench: a Lesson Credit page.</li>
+</ul><p>TODO add lesson life cycle figure again here.</p>
+<div id="accordionInstructor1" class="accordion instructor-note accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
+  <h3 class="accordion-header" id="headingInstructor1">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div>
+  Instructor Note
+  </h3>
+</button>
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div class="accordion-body">
+<p>the next discussion exercise will require a rough sketch of the lesson life cycle on the wall/a white board, and sticky notes for people to write on and stick to that sketch.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="discussion1" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div id="what-kinds-of-contribution-can-there-be" class="callout-inner">
+<h3 class="callout-title">What kinds of contribution can there be?<a class="anchor" aria-label="anchor" href="#what-kinds-of-contribution-can-there-be"></a>
+</h3>
+<div class="callout-content">
+<ul><li>take a few minutes to think about the process for a stable lesson to exist, from start to finish</li>
+<li>who makes that happen? and when? what types of contribution are made?</li>
+<li>write these types of contribution on sticky notes, and stick them to the [wall/white board], roughly where they might fall in the life cycle of the lesson.</li>
+</ul></div>
+</div>
+</div>
+<ul><li>show current prototype for lesson credit page</li>
+</ul><div id="discussion2" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div id="give-us-your-feedback" class="callout-inner">
+<h3 class="callout-title">Give us your feedback<a class="anchor" aria-label="anchor" href="#give-us-your-feedback"></a>
+</h3>
+<div class="callout-content">
+<p>Using more sticky notes, give us feedback/your ideas on the following, according to sticky note colour:</p>
+<ul><li>
+<strong>blue</strong>: what is missing from this page?</li>
+<li>
+<strong>yellow</strong>: who could be the target audiences for this page?</li>
+<li>
+<strong>orange</strong>: anything else you would like to tell us</li>
+</ul><p>Stick your notes to the wall on your way out of the room.</p>
+</div>
+</div>
+</div>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -281,10 +345,7 @@
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use. 
  -->
-
-
-
-      </div> <!-- / div.lesson-content -->
+</section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/workbench.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
         <a class="chapter-link float-end" href="../instructor/index.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
@@ -331,8 +392,8 @@ any links that you are not going to use.
   "url": "https://tobyhodges.github.io/rse22-workshop-carpentries-workbench/instructor/lesson-credit.html",
   "identifier": "https://tobyhodges.github.io/rse22-workshop-carpentries-workbench/instructor/lesson-credit.html",
   "dateCreated": "2022-07-20",
-  "dateModified": "2022-09-02",
-  "datePublished": "2022-09-02"
+  "dateModified": "2022-09-04",
+  "datePublished": "2022-09-04"
 }
 
   </script><script>
