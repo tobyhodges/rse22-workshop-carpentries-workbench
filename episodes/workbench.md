@@ -24,6 +24,13 @@ exercises: 20
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+::::::::::::::::::::::::::::::::::::::::::: prereq
+
+This episode requires you to have R and Git installed on your machine.
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
 - create repo on GitHub from Rmd template
 - tour that, then clone locally
 - create_episode
@@ -63,12 +70,13 @@ so that the new repository contains the basic files and folders
 that the Workbench needs in order to build a lesson site.
 There are currently two templates to choose between:
 
-1. [A Markdown template][md-template]
+1. [A Markdown template][md-template], suited for lessons that do not need to contain executable code.  
 2. [An RMarkdown template][rmd-template], best suited to lessons that will include R source code that will generate output.
 
-We are going to use the RMarkdown template in this workshop.
+We are going to use the **RMarkdown template** in this workshop.
 
 ::: challenge
+
 ## Creating a new lesson repository
 
 Follow the steps demonstrated by the workshop lead:
@@ -81,7 +89,8 @@ Follow the steps demonstrated by the workshop lead:
      * The name can always be changed later, via the repository settings
    * In the "Description" field, write the title of your lesson
    * Choose "Public" visibility
-   * Make sure the "Include all branches" box is checked
+   * **Make sure the "Include all branches" box is checked**. This is not
+     required, but means that the setup on GitHub pages moves faster initially.
 
 After pressing the _Create repository using this template_ button,
 you should be presented with a brand new lesson repository.
@@ -91,7 +100,14 @@ you should be presented with a brand new lesson repository.
 
 ### Repository Files
 
-The repository contains a number of files and folders.
+The repository contains a number of files and folders. The most important files
+and folders are:
+
+ - `episodes/` contains the main narrative content of the lesson
+ - `instructors/` contains information useful for instructors such as instructor
+   notes relevant for the overall lesson or extra exercises that could be useful
+   for learners who would like an extra challenge
+
 Most of these are source files for the content of our new lesson,
 but a few are accompanying files primarily intended for the repository itself
 rather than the lesson website.
@@ -141,11 +157,11 @@ You may need to wait a few minutes for the website to be generated.
 #### `config.yaml`
 
 The lesson title can be adjusted by modifying the `config.yaml` file in the repository.
-The `config.yaml` file contains several global parameters for a lesson -
-to determine some of the page styling, contact details for the lesson, etc -
-and is written in _[YAML]_, a structured file format of key-pair values.
+The `config.yaml` file contains several global parameters for a lesson---to
+determine some of the page styling, contact details for the lesson, etc---and 
+is written in _[YAML]_, a structured file format of key-pair values.
 As well as the title of the lesson,
-you can and should adjust some of the other values in `config.yaml`,
+you can and should adjust some of [the other values in `config.yaml`][set-config],
 but you should not need to add new values or learn a lot about YAML 
 to be able to configure your lesson.
 
@@ -161,7 +177,7 @@ Complete the configuration of your lesson by adjusting the following fields in `
    which can help people find your lesson when searching for resources online.
 - `source`: change this to the URL for your lesson repository.
 
-We will revisit the `life_cycle` and `carpentry` fields in `config.yaml` later in this training.
+We will revisit the `life_cycle` and `carpentry` fields in `config.yaml` later in this training. 
 
 :::
 
@@ -192,15 +208,14 @@ we will make a copy of the new lesson repository on our local system.
 To do so, we need to _clone_ the repository to a place on our system
 where we can find it easily.
 
-In the example below, we clone the repository to our user's `Desktop` on our filesystem,
-using the SSH protocol.
-(If you configured a personal access token for authenticating to GitHub, 
-instead of SSH keys,
-you should use the HTTPS protocol.)
+In the example below, we clone the repository to our user's `Desktop` on our
+filesystem, using the SSH protocol. (If you configured a personal access token
+for authenticating to GitHub, instead of SSH keys, you should use the HTTPS
+protocol.)
 
 ```bash
 cd ~/Desktop
-git clone git@github.com:your_user_name/your_repository_name.git
+git clone git@github.com:USER_NAME/REPOSITORY.git
 ```
 
 Now that we have a copy of the lesson repository locally,
@@ -216,12 +231,28 @@ working with that repository on our own system.
 # register the repositories for The Carpentries and CRAN
 options(repos = c(
   carpentries = "https://carpentries.r-universe.dev/",
-  CRAN = "https://cran.rstudio.com/"
+  getOption("repos")
 ))
 
 # Install the template packages to your R library
 install.packages(c("sandpaper", "varnish", "pegboard", "tinkr"))
 ```
+
+::: prereq
+
+### For Linux Users
+
+If you have a linux system, you may need to install C libraries that
+the workbench dependencies require (such as libxml). A set of dependencies for
+ubuntu can be found using the following command:
+
+```bash
+curl https://carpentries.r-universe.dev/stats/sysdeps 2> /dev/null \
+| jq -r '.library' 
+```
+
+:::
+
 
 3. Test your installation:
 
@@ -237,8 +268,57 @@ sandpaper::build_lesson(tmp, preview = FALSE, quiet = TRUE)
 fs::dir_tree(tmp, recurse = 1)
 ```
 
-If everything looks ok, we can go ahead and open the lesson repository as
+```output
+[1] ‘2.12’
+ℹ Consent for package cache revoked. Use `use_package_cache()` to undo.
+ℹ No schedule set, using Rmd files in episodes/ directory.
+→ To remove this message, define your schedule in config.yaml or use `set_episodes()` to generate it.
+✔ First episode created in /tmp/RtmpxeJyVD/file45677ea639b2/episodes/introduction.Rmd
+ℹ Workflows up-to-date!
+✔ Lesson successfully created in /tmp/RtmpxeJyVD/file45677ea639b2
+/tmp/RtmpxeJyVD/file45677ea639b2
+/tmp/RtmpxeJyVD/file45677ea639b2
+├── CODE_OF_CONDUCT.md
+├── CONTRIBUTING.md
+├── LICENSE.md
+├── README.md
+├── config.yaml
+├── episodes
+│   ├── data
+│   ├── fig
+│   ├── files
+│   └── 01-introduction.Rmd
+├── index.md
+├── instructors
+│   └── instructor-notes.md
+├── learners
+│   └── setup.md
+├── links.md
+├── profiles
+│   └── learner-profiles.md
+└── site
+    ├── DESCRIPTION
+    ├── README.md
+    ├── _pkgdown.yaml
+    ├── built
+    └── docs
+```
+
+
+If everything looks ok (e.g. no warnings or errors), we can go ahead and open the lesson repository as
 a project in RStudio (_File_ -> _Open Project..._).
+
+::: callout
+
+### Having Trouble?
+
+If you are having trouble installing a particular component of the workbench,
+we have created an RStudio cloud instance that you can use to follow along
+with the desktop commands: <https://rstudio.cloud/content/4442910>. 
+
+:::
+
+
 
 ## Lesson Content Source Files 
 
@@ -343,7 +423,7 @@ We will use the code block and output below to demonstrate one of the new featur
 provided by The Carpentries Workbench: automated feedback about changes to the
 rendered lesson content that would be made by a pull request.
 
-````Markdown
+````markdown
 ```{r pyramid, fig.alt = "pie chart illusion of a pyramid", fig.cap = "Sun arise each and every morning"}
 pie(
   c(Sky = 78, "Sunny side of pyramid" = 17, "Shady side of pyramid" = 5), 
@@ -376,6 +456,8 @@ follow these steps:
 
 :::::: solution
 
+````markdown
+
 ```{r pyramid-green, fig.alt = "pie chart illusion of a pyramid", fig.cap = "Sun arise each and every morning"}
 pie(
   c(Sky = 78, "Sunny side of pyramid" = 17, "Shady side of pyramid" = 5), 
@@ -384,6 +466,7 @@ pie(
   border = FALSE
 )
 ```
+````
 
 ::::::
 :::
@@ -409,4 +492,5 @@ pie(
 [styles-contributors]: https://github.com/carpentries/styles/graphs/contributors
 [swc-home]: https://software-carpentry.org/
 [YAML]: https://yaml.org/
+[set-config](https://carpentries.github.io/sandpaper/reference/set_config.html#default-keypairs-known-by-sandpaper)
 
