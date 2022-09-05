@@ -176,8 +176,8 @@
 <li><a href="#using-the-carpentries-workbench">Using The Carpentries Workbench</a></li>
 <li><a href="#working-with-a-local-copy">Working with a Local Copy</a></li>
 <li><a href="#installing-the-workbench">Installing the Workbench</a></li>
-<li><a href="#lesson-content-source-files">Lesson Content Source Files</a></li>
 <li><a href="#previewing-the-lesson">Previewing the Lesson</a></li>
+<li><a href="#lesson-content-source-files">Lesson Content Source Files</a></li>
 <li><a href="#pushing-to-github">Pushing to GitHub</a></li>
 <li><a href="#editing-an-episode">Editing an Episode</a></li>
         </ul></div><!--/div.accordion-body-->
@@ -255,6 +255,25 @@
 
         
 
+<div id="accordionInstructor1" class="accordion instructor-note accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
+  <h3 class="accordion-header" id="headingInstructor1">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div>
+  Installation Woes for Linux Users
+  </h3>
+</button>
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div class="accordion-body">
+<p>The <a href="#installing-the-workbench">installation section</a> should work well for Windows and Mac users, but it will probably be a PITA for Linux users, especially those who have never used R. There are two main reasons for this pain:</p>
+<ol style="list-style-type: decimal"><li>
+<strong>Linux packages are not pre-compiled</strong>, which means that all packages need to be compiled before they enter the library. For pure-R based packages (e.g. {sandpaper}), the compilation takes less than half a second, but for packages that contain C or C++ code (e.g. {xml2}, this can take up to a minute or more, depending on how complex the package is.</li>
+<li>Related to the point above: <strong>some packages require external C libraries</strong> that may not be present on the user’s computer (e.g. <code>libxml</code> for {xml2} or <code>libgit2</code> for {gert}.</li>
+</ol><p>Both of these caveats make things a bit of a headache on Linux systems.</p>
+</div>
+</div>
+</div>
+</div>
 <div class="overview card">
 <h2 class="card-header">Overview</h2>
 <div class="row g-0">
@@ -284,15 +303,25 @@
 </div>
 </div>
 </div>
-<div id="prereq1" class="callout prereq">
+<div id="checklist1" class="callout checklist">
 <div class="callout-square">
-<i class="callout-icon" data-feather="check"></i>
+<i class="callout-icon" data-feather="check-square"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Prereq<a class="anchor" aria-label="anchor" href="#NA"></a>
+<div id="check-your-setup" class="callout-inner">
+<h3 class="callout-title">Check your setup!<a class="anchor" aria-label="anchor" href="#check-your-setup"></a>
 </h3>
 <div class="callout-content">
-<p>This episode requires you to have R and Git installed on your machine.</p>
+<p>Before you work with this episode, make sure you have installed:</p>
+<ul class="task-list"><li>
+<input type="checkbox" disabled>
+R</li>
+<li>
+<input type="checkbox" disabled>
+RStudio</li>
+<li>
+<input type="checkbox" disabled>
+Git</li>
+</ul><p>And please make sure you have a GitHub account you can connect to.</p>
 </div>
 </div>
 </div>
@@ -305,11 +334,12 @@
 </ul><p>In this next part of the workshop, we will explore the new infrastructure for lessons - The Carpentries Workbench. In this section, you will learn about the key components of the Workbench and gain some hands-on experience of creating and editing a lesson website using the Workbench.</p>
 <section id="github-pages"><h2 class="section-heading">GitHub Pages<a class="anchor" aria-label="anchor" href="#github-pages"></a>
 </h2>
-<hr class="half-width"><p>The source of all The Carpentries lessons is made publicly-available in repositories on <a href="https://github.com/" class="external-link">GitHub</a>. By making our repositories public like this, we encourage others to help us maintain and improve our lessons, and make it as easy as possible for them to re-use and modify our lessons for their own purposes.</p>
+<hr class="half-width"><p>From the beginning, Carpentries lessons have been freely available for all to use under a CC-BY license.</p>
+<p>The source of all The Carpentries lessons is made publicly-available in repositories on <a href="https://github.com/" class="external-link">GitHub</a>. By making our repositories public like this, we encourage others to help us maintain and improve our lessons, and make it as easy as possible for them to re-use and modify our lessons for their own purposes.</p>
 <p>Via a system called <strong>GitHub Pages</strong>, users can build and host websites from the files present in any repository on GitHub. For many years, this has been how The Carpentries presents its lesson websites to the world.</p>
 </section><section id="using-the-carpentries-workbench"><h2 class="section-heading">Using The Carpentries Workbench<a class="anchor" aria-label="anchor" href="#using-the-carpentries-workbench"></a>
 </h2>
-<hr class="half-width"><p>Carpentries lesson websites are built with <a href="https://carpentries.github.io/sandpaper-docs/" class="external-link"><strong>The Carpentries Workbench</strong></a>, a toolkit that converts Markdown and RMarkdown files into the HTML that can be served by GitHub Pages.</p>
+<hr class="half-width"><p>Starting in 2023, Carpentries lesson websites will be built with <a href="https://carpentries.github.io/sandpaper-docs/" class="external-link"><strong>The Carpentries Workbench</strong></a>, a toolkit that converts Markdown and RMarkdown files into the HTML that can be served by GitHub Pages.</p>
 <div class="section level3">
 <h3 id="creating-a-lesson-repository">Creating a Lesson Repository<a class="anchor" aria-label="anchor" href="#creating-a-lesson-repository"></a></h3>
 <p>To get started, we first need to create a new repository for our lesson. We will use a template to do this, so that the new repository contains the basic files and folders that the Workbench needs in order to build a lesson site. There are currently two templates to choose between:</p>
@@ -344,13 +374,26 @@
 </div>
 </div>
 <div class="section level3">
-<h3 id="repository-files">Repository Files<a class="anchor" aria-label="anchor" href="#repository-files"></a></h3>
+<h3 id="main-files-and-folders">Main Files and Folders<a class="anchor" aria-label="anchor" href="#main-files-and-folders"></a></h3>
 <p>The repository contains a number of files and folders. The most important files and folders are:</p>
 <ul><li>
 <code>episodes/</code> contains the main narrative content of the lesson</li>
 <li>
 <code>instructors/</code> contains information useful for instructors such as instructor notes relevant for the overall lesson or extra exercises that could be useful for learners who would like an extra challenge</li>
-</ul><p>Most of these are source files for the content of our new lesson, but a few are accompanying files primarily intended for the repository itself rather than the lesson website. These are:</p>
+<li>
+<code>learners/</code> contains information that would be useful for learners such as a reference document and setup instructions.</li>
+<li>
+<code>profiles/</code> contain learner profiles for people who might find this lesson useful. This will help learners assess if the workshop is for them and help the instructors know what they can expect from their audience.</li>
+</ul><p>Note that The Workbench recognises both Markdown and RMarkdown filetypes.</p>
+<div id="callout1" class="callout callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="and-the-rest" class="callout-inner">
+<h3 class="callout-title">… and the rest!<a class="anchor" aria-label="anchor" href="#and-the-rest"></a>
+</h3>
+<div class="callout-content">
+<p>Most of these are source files for the content of our new lesson, but a few are accompanying files primarily intended for the repository itself rather than the lesson website. These are:</p>
 <ul><li><code>CODE_OF_CONDUCT.md</code></li>
 <li><code>CONTRIBUTING.md</code></li>
 <li><code>LICENSE.md</code></li>
@@ -359,12 +402,15 @@
 <li>and the <code>.github/</code> folder.</li>
 </ul><p>We will address all of the files later in the workshop. For now, we will move on to complete the basic setup of the lesson.</p>
 </div>
+</div>
+</div>
+</div>
 <div class="section level3">
 <h3 id="configuring-a-lesson-repository">Configuring a Lesson Repository<a class="anchor" aria-label="anchor" href="#configuring-a-lesson-repository"></a></h3>
 <div class="section level4">
 <h4 id="activating-github-pages">Activating GitHub Pages<a class="anchor" aria-label="anchor" href="#activating-github-pages"></a></h4>
 <p>We need to tell GitHub to begin serving the lesson website via GitHub Pages. To do this, navigate to <em>Settings</em>, then choose <em>Pages</em> from the left sidebar. Under <em>Source</em>, choose the <code>gh-pages</code> branch, leave the folder set to <code>/ (root)</code>, and click <em>Save</em>. Now, copy the URL in the box: this will be the address of your lesson site.</p>
-<div id="callout1" class="callout callout">
+<div id="callout2" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -377,11 +423,12 @@
 </div>
 </div>
 <p>Returning to the repository home page (e.g. by clicking the name of the project near the top left of the window), click the gear wheel icon near the top right, to edit the <em>About</em> box. Paste the Pages URL into the <em>Website</em> box and click <em>Save changes</em>.</p>
-<p>After following these steps, when you navigate to the pages URL, you should be see a lesson website with The Carpentries logo and “Lesson Title” in the top-left corner. You may need to wait a few minutes for the website to be generated.</p>
+<p>After following these steps, when you navigate to the pages URL, you should be see a lesson website with The Carpentries logo and “Lesson Title” in the top-left corner. You may need to wait a minute or two for the GitHub to render the website.</p>
 </div>
 <div class="section level4">
-<h4 id="config-yaml"><code>config.yaml</code><a class="anchor" aria-label="anchor" href="#config-yaml"></a></h4>
-<p>The lesson title can be adjusted by modifying the <code>config.yaml</code> file in the repository. The <code>config.yaml</code> file contains several global parameters for a lesson—to determine some of the page styling, contact details for the lesson, etc—and is written in <em><a href="https://yaml.org/" class="external-link">YAML</a></em>, a structured file format of key-pair values. As well as the title of the lesson, you can and should adjust some of [the other values in <code>config.yaml</code>][set-config], but you should not need to add new values or learn a lot about YAML to be able to configure your lesson.</p>
+<h4 id="setting-global-parameters-in-config-yaml">Setting global parameters in <code>config.yaml</code>
+<a class="anchor" aria-label="anchor" href="#setting-global-parameters-in-config-yaml"></a></h4>
+<p>The lesson title can be adjusted by modifying the <code>config.yaml</code> file in the repository. The <code>config.yaml</code> file contains several global parameters for a lesson—to determine some of the page styling, contact details for the lesson, etc—and is written in <em><a href="https://yaml.org/" class="external-link">YAML</a></em>, a structured file format of key-pair values. As well as the title of the lesson, you can and should adjust some of <a href="https://carpentries.github.io/sandpaper/reference/set_config.html#default-keypairs-known-by-sandpaper" class="external-link">the other values in <code>config.yaml</code></a>, but you should not need to add new values or learn a lot about YAML to be able to configure your lesson.</p>
 <div id="discussion2" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
@@ -403,7 +450,7 @@
 </div>
 </div>
 </div>
-<div id="callout2" class="callout callout">
+<div id="callout3" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -434,7 +481,7 @@
 </section><section id="installing-the-workbench"><h2 class="section-heading">Installing the Workbench<a class="anchor" aria-label="anchor" href="#installing-the-workbench"></a>
 </h2>
 <hr class="half-width"><ol style="list-style-type: decimal"><li>Open RStudio</li>
-<li>In the console, type the following commands:</li>
+<li>In the console, type the following commands to install the workbench and all the required packages:</li>
 </ol><div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -448,7 +495,7 @@
 <span><span class="co"># Install the template packages to your R library</span></span>
 <span><span class="fu">install.packages</span><span class="op">(</span><span class="fu">c</span><span class="op">(</span><span class="st">"sandpaper"</span>, <span class="st">"varnish"</span>, <span class="st">"pegboard"</span>, <span class="st">"tinkr"</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
-<div id="prereq2" class="callout prereq">
+<div id="prereq1" class="callout prereq">
 <div class="callout-square">
 <i class="callout-icon" data-feather="check"></i>
 </div>
@@ -461,13 +508,31 @@
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> https://carpentries.r-universe.dev/stats/sysdeps <span class="dv">2</span><span class="op">&gt;</span> /dev/null <span class="dt">\</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span> <span class="ex">jq</span> <span class="at">-r</span> <span class="st">'.library'</span> </span></code></pre>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span> <span class="ex">jq</span> <span class="at">-r</span> <span class="st">'.library | select(. != null)'</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code><span><span class="va">c</span><span class="op">+</span><span class="op">+</span></span>
+<span><span class="va">curl</span></span>
+<span><span class="va">fontconfig</span></span>
+<span><span class="va">freetype</span></span>
+<span><span class="va">fribidi</span></span>
+<span><span class="va">harfbuzz</span></span>
+<span><span class="va">icu</span></span>
+<span><span class="va">libgit2</span></span>
+<span><span class="va">libjpeg</span><span class="op">-</span><span class="va">turbo</span></span>
+<span><span class="va">libpng</span></span>
+<span><span class="va">libtiff</span></span>
+<span><span class="va">libxml2</span></span>
+<span><span class="va">libxslt</span></span>
+<span><span class="va">openssl</span></span></code></pre>
 </div>
 </div>
 </div>
 </div>
-<ol start="3" style="list-style-type: decimal"><li>Test your installation:</li>
-</ol><div class="codewrapper sourceCode" id="cb4">
+<ol start="3" style="list-style-type: decimal"><li>Test your installation: copy and paste this code and see if you get similar output.</li>
+</ol><div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -475,51 +540,49 @@
 <span><span class="kw">library</span><span class="op">(</span><span class="st">'fs'</span><span class="op">)</span></span>
 <span><span class="kw">library</span><span class="op">(</span><span class="st">'rmarkdown'</span><span class="op">)</span></span>
 <span><span class="fu">rmarkdown</span><span class="fu">::</span><span class="fu">pandoc_version</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] '2.18'</span></span>
 <span><span class="va">tmp</span> <span class="op">&lt;-</span> <span class="fu">tempfile</span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="fu">sandpaper</span><span class="fu">::</span><span class="fu">no_package_cache</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; ℹ Consent for package cache revoked. Use `use_package_cache()` to undo.</span></span>
 <span><span class="fu">sandpaper</span><span class="fu">::</span><span class="fu">create_lesson</span><span class="op">(</span><span class="va">tmp</span>, open <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="co">#&gt; → Creating Lesson in '/tmp/RtmpOBHY8v/file541125775e3a'...</span></span>
+<span><span class="co">#&gt; ℹ No schedule set, using Rmd files in 'episodes/' directory.</span></span>
+<span><span class="co">#&gt; → Creating Lesson in '/tmp/RtmpOBHY8v/file541125775e3a'...→ To remove this message, define your schedule in 'config.yaml' or use `set_episodes()` to generate it.</span></span>
+<span><span class="co">#&gt; → Creating Lesson in '/tmp/RtmpOBHY8v/file541125775e3a'...✔ First episode created in '/tmp/RtmpOBHY8v/file541125775e3a/episodes/01-introduction.Rmd'</span></span>
+<span><span class="co">#&gt; → Creating Lesson in '/tmp/RtmpOBHY8v/file541125775e3a'...ℹ Workflows up-to-date!</span></span>
+<span><span class="co">#&gt; → Creating Lesson in '/tmp/RtmpOBHY8v/file541125775e3a'...✔ Lesson successfully created in '/tmp/RtmpOBHY8v/file541125775e3a'</span></span>
+<span><span class="co">#&gt; → Creating Lesson in '/tmp/RtmpOBHY8v/file541125775e3a'...</span></span>
+<span><span class="co">#&gt; /tmp/RtmpOBHY8v/file541125775e3a</span></span>
 <span><span class="fu">sandpaper</span><span class="fu">::</span><span class="fu">build_lesson</span><span class="op">(</span><span class="va">tmp</span>, preview <span class="op">=</span> <span class="cn">FALSE</span>, quiet <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
-<span><span class="fu">fs</span><span class="fu">::</span><span class="fu">dir_tree</span><span class="op">(</span><span class="va">tmp</span>, recurse <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code></pre>
-</div>
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code>[1] ‘2.12’
-ℹ Consent for package cache revoked. Use `use_package_cache()` to undo.
-ℹ No schedule set, using Rmd files in episodes/ directory.
-→ To remove this message, define your schedule in config.yaml or use `set_episodes()` to generate it.
-✔ First episode created in /tmp/RtmpxeJyVD/file45677ea639b2/episodes/introduction.Rmd
-ℹ Workflows up-to-date!
-✔ Lesson successfully created in /tmp/RtmpxeJyVD/file45677ea639b2
-/tmp/RtmpxeJyVD/file45677ea639b2
-/tmp/RtmpxeJyVD/file45677ea639b2
-├── CODE_OF_CONDUCT.md
-├── CONTRIBUTING.md
-├── LICENSE.md
-├── README.md
-├── config.yaml
-├── episodes
-│   ├── data
-│   ├── fig
-│   ├── files
-│   └── 01-introduction.Rmd
-├── index.md
-├── instructors
-│   └── instructor-notes.md
-├── learners
-│   └── setup.md
-├── links.md
-├── profiles
-│   └── learner-profiles.md
-└── site
-    ├── DESCRIPTION
-    ├── README.md
-    ├── _pkgdown.yaml
-    ├── built
-    └── docs</code></pre>
+<span><span class="fu">fs</span><span class="fu">::</span><span class="fu">dir_tree</span><span class="op">(</span><span class="va">tmp</span>, recurse <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
+<span><span class="co">#&gt; /tmp/RtmpOBHY8v/file541125775e3a</span></span>
+<span><span class="co">#&gt; ├── CODE_OF_CONDUCT.md</span></span>
+<span><span class="co">#&gt; ├── CONTRIBUTING.md</span></span>
+<span><span class="co">#&gt; ├── LICENSE.md</span></span>
+<span><span class="co">#&gt; ├── README.md</span></span>
+<span><span class="co">#&gt; ├── config.yaml</span></span>
+<span><span class="co">#&gt; ├── episodes</span></span>
+<span><span class="co">#&gt; │   ├── data</span></span>
+<span><span class="co">#&gt; │   ├── fig</span></span>
+<span><span class="co">#&gt; │   ├── files</span></span>
+<span><span class="co">#&gt; │   └── 01-introduction.Rmd</span></span>
+<span><span class="co">#&gt; ├── index.md</span></span>
+<span><span class="co">#&gt; ├── instructors</span></span>
+<span><span class="co">#&gt; │   └── instructor-notes.md</span></span>
+<span><span class="co">#&gt; ├── learners</span></span>
+<span><span class="co">#&gt; │   └── setup.md</span></span>
+<span><span class="co">#&gt; ├── links.md</span></span>
+<span><span class="co">#&gt; ├── profiles</span></span>
+<span><span class="co">#&gt; │   └── learner-profiles.md</span></span>
+<span><span class="co">#&gt; └── site</span></span>
+<span><span class="co">#&gt;     ├── DESCRIPTION</span></span>
+<span><span class="co">#&gt;     ├── README.md</span></span>
+<span><span class="co">#&gt;     ├── _pkgdown.yaml</span></span>
+<span><span class="co">#&gt;     ├── built</span></span>
+<span><span class="co">#&gt;     └── docs</span></span></code></pre>
 </div>
 <p>If everything looks ok (e.g. no warnings or errors), we can go ahead and open the lesson repository as a project in RStudio (<em>File</em> -&gt; <em>Open Project…</em>).</p>
-<div id="callout3" class="callout callout">
+<div id="callout4" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -531,6 +594,16 @@
 </div>
 </div>
 </div>
+</section><section id="previewing-the-lesson"><h2 class="section-heading">Previewing the Lesson<a class="anchor" aria-label="anchor" href="#previewing-the-lesson"></a>
+</h2>
+<hr class="half-width"><p>To see how the lesson website looks with this new episode added, we can build and serve a local version of the site, which will be automatically updated whenever we make changes to the source files.</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">sandpaper</span><span class="fu">::</span><span class="fu">serve</span><span class="op">(</span><span class="op">)</span></span></code></pre>
+</div>
+<p>After a short wait, a preview of the built lesson site should pop into the <em>Viewer</em> panel of RStudio. (You can “pop” it out into a web browser tab by clicking the little <em>Show in new window</em> button near the top of the Viewer panel.)</p>
 </section><section id="lesson-content-source-files"><h2 class="section-heading">Lesson Content Source Files<a class="anchor" aria-label="anchor" href="#lesson-content-source-files"></a>
 </h2>
 <hr class="half-width"><p>Using the <em>Files</em> tab within RStudio, we can begin to look at where the content of a lesson is stored and written.</p>
@@ -544,52 +617,42 @@
 <li>instructor notes</li>
 <li>callouts i.e. optional content that can provide extra context or answer a frequently asked question about a particular topic in a lesson</li>
 </ul></li>
-</ol><div class="codewrapper sourceCode" id="cb6">
+</ol><div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">MARKDOWN<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode markdown" tabindex="0"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Using RMarkdown"</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="an">teaching:</span><span class="co"> 10</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="an">exercises:</span><span class="co"> 2</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>:::::::::::::::::::::::::::::::::::::: questions </span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>How do you write a lesson using RMarkdown and <span class="in">`{sandpaper}`</span>?</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>::::::::::::::::::::::::::::::::::::::::::::::::</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>::::::::::::::::::::::::::::::::::::: objectives</span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Explain how to use RMarkdown with The Carpentries Workbench</span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Demonstrate how to include pieces of code, figures, and nested challenge blocks</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>::::::::::::::::::::::::::::::::::::::::::::::::</span></code></pre>
+<pre class="sourceCode markdown" tabindex="0"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Using RMarkdown"</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="an">teaching:</span><span class="co"> 10</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="an">exercises:</span><span class="co"> 2</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>:::::::::::::::::::::::::::::::::::::: questions </span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>How do you write a lesson using RMarkdown and <span class="in">`{sandpaper}`</span>?</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>::::::::::::::::::::::::::::::::::::::::::::::::</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>::::::::::::::::::::::::::::::::::::: objectives</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Explain how to use RMarkdown with The Carpentries Workbench</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Demonstrate how to include pieces of code, figures, and nested challenge blocks</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>::::::::::::::::::::::::::::::::::::::::::::::::</span></code></pre>
 </div>
 <div class="section level3">
 <h3 id="creating-a-new-episode">Creating a New Episode<a class="anchor" aria-label="anchor" href="#creating-a-new-episode"></a></h3>
-<p>To add a new episode to a lesson, we can run the <code>sandpaper::create_episode</code> function:</p>
-<div class="codewrapper sourceCode" id="cb7">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">sandpaper</span><span class="fu">::</span><span class="fu">create_episode</span><span class="op">(</span><span class="st">"next-episode"</span><span class="op">)</span></span></code></pre>
-</div>
-<p>When you call this function, you should see a new file appear in the <code>episodes</code> folder. It will have the same example content as <code>01-introduction.Rmd</code> but with a different title in the YAML header, based on the name you specified for the new episode in the call to <code>create_episode</code>.</p>
-</div>
-</section><section id="previewing-the-lesson"><h2 class="section-heading">Previewing the Lesson<a class="anchor" aria-label="anchor" href="#previewing-the-lesson"></a>
-</h2>
-<hr class="half-width"><p>To see how the lesson website looks with this new episode added, we can build and serve a local version of the site, which will be automatically updated whenever we make changes to the source files.</p>
+<p>To add a new episode to a lesson, we can run the <code>sandpaper::create_episode_rmd()</code> function:</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">sandpaper</span><span class="fu">::</span><span class="fu">serve</span><span class="op">(</span><span class="op">)</span></span></code></pre>
+<code class="sourceCode R"><span><span class="fu">sandpaper</span><span class="fu">::</span><span class="fu">create_episode_rmd</span><span class="op">(</span><span class="st">"Next Episode"</span><span class="op">)</span></span></code></pre>
 </div>
-<p>After a short wait, a preview of the built lesson site should pop into the <em>Viewer</em> panel of RStudio. (You can “pop” it out into a web browser tab by clicking the little <em>Show in new window</em> button near the top of the Viewer panel.)</p>
+<p>When you call this function, you should see a new file called <code>02-next-episode.Rmd</code> appear in the <code>episodes</code> folder. It will have the same example content as <code>01-introduction.Rmd</code> but with a different title in the YAML header, based on the name you specified for the new episode in the call to <code>create_episode</code>.</p>
+</div>
 </section><section id="pushing-to-github"><h2 class="section-heading">Pushing to GitHub<a class="anchor" aria-label="anchor" href="#pushing-to-github"></a>
 </h2>
-<hr class="half-width"><p>push new episode back to github</p>
+<hr class="half-width"><p>Push new episode back to github using either the Git tab in the top left pane or</p>
 </section><section id="editing-an-episode"><h2 class="section-heading">Editing an Episode<a class="anchor" aria-label="anchor" href="#editing-an-episode"></a>
 </h2>
 <hr class="half-width"><p>We will use the code block and output below to demonstrate one of the new features provided by The Carpentries Workbench: automated feedback about changes to the rendered lesson content that would be made by a pull request.</p>
@@ -632,7 +695,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">MARKDOWN<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -666,7 +729,6 @@
 </ul></div>
 </div>
 </div>
-<p><a href="https://carpentries.github.io/sandpaper/reference/set_config.html#default-keypairs-known-by-sandpaper" class="external-link">set-config</a></p>
 <!-- 
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use. 

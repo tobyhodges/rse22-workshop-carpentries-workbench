@@ -288,7 +288,15 @@ any links that you are not going to use.
 <p>At this point, the workshop leads should introduce themselves.</p>
 <hr></section><section id="lesson-design"><h2 class="section-heading"><a href="lesson-design.html">A Collaborative Lesson Design Process</a></h2>
 <hr class="half-width"></section><section id="workbench"><h2 class="section-heading"><a href="workbench.html">The Carpentries Workbench</a></h2>
-<hr class="half-width"></section><section id="lesson-credit"><h2 class="section-heading"><a href="lesson-credit.html">Crediting Contributions to Lessons</a></h2>
+<hr class="half-width">
+<p>The <a href="#installing-the-workbench">installation section</a> should work well for Windows and Mac users, but it will probably be a PITA for Linux users, especially those who have never used R. There are two main reasons for this pain:</p>
+<ol style="list-style-type: decimal">
+<li>
+<strong>Linux packages are not pre-compiled</strong>, which means that all packages need to be compiled before they enter the library. For pure-R based packages (e.g. {sandpaper}), the compilation takes less than half a second, but for packages that contain C or C++ code (e.g. {xml2}, this can take up to a minute or more, depending on how complex the package is.</li>
+<li>Related to the point above: <strong>some packages require external C libraries</strong> that may not be present on the user’s computer (e.g. <code>libxml</code> for {xml2} or <code>libgit2</code> for {gert}.</li>
+</ol>
+<p>Both of these caveats make things a bit of a headache on Linux systems.</p>
+<hr></section><section id="lesson-credit"><h2 class="section-heading"><a href="lesson-credit.html">Crediting Contributions to Lessons</a></h2>
 <hr class="half-width">
 <p>the next discussion exercise will require a rough sketch of the lesson life cycle on the wall/a white board, and sticky notes for people to write on and stick to that sketch.</p>
 <hr></section></section>
