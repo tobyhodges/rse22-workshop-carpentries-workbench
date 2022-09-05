@@ -54,6 +54,9 @@ using the Workbench.
 
 ## GitHub Pages
 
+From the beginning, Carpentries lessons have been freely available for all to
+use under a CC-BY license.
+
 The source of all The Carpentries lessons is made publicly-available in repositories on [GitHub].
 By making our repositories public like this,
 we encourage others to help us maintain and improve our lessons,
@@ -106,7 +109,7 @@ you should be presented with a brand new lesson repository.
 :::
 
 
-### Repository Files
+### Main Files and Folders
 
 The repository contains a number of files and folders. The most important files
 and folders are:
@@ -115,6 +118,17 @@ and folders are:
  - `instructors/` contains information useful for instructors such as instructor
    notes relevant for the overall lesson or extra exercises that could be useful
    for learners who would like an extra challenge
+ - `learners/` contains information that would be useful for learners such as
+   a reference document and setup instructions.
+ - `profiles/` contain learner profiles for people who might find this lesson
+   useful. This will help learners assess if the workshop is for them and help
+   the instructors know what they can expect from their audience.
+
+Note that The Workbench recognises both Markdown and RMarkdown filetypes. 
+
+::: callout
+
+### ... and the rest! 
 
 Most of these are source files for the content of our new lesson,
 but a few are accompanying files primarily intended for the repository itself
@@ -130,6 +144,8 @@ These are:
 
 We will address all of the files later in the workshop.
 For now, we will move on to complete the basic setup of the lesson.
+
+:::
 
 ### Configuring a Lesson Repository
 
@@ -160,9 +176,9 @@ click the gear wheel icon near the top right, to edit the _About_ box.
 Paste the Pages URL into the _Website_ box and click _Save changes_.
 
 After following these steps, when you navigate to the pages URL, you should be see a lesson website with The Carpentries logo and "Lesson Title" in the top-left corner.
-You may need to wait a few minutes for the website to be generated.
+You may need to wait a minute or two for the GitHub to render the website.
 
-#### `config.yaml`
+#### Setting global parameters in `config.yaml`
 
 The lesson title can be adjusted by modifying the `config.yaml` file in the repository.
 The `config.yaml` file contains several global parameters for a lesson---to
