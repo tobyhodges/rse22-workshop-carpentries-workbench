@@ -24,9 +24,17 @@ exercises: 20
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-::::::::::::::::::::::::::::::::::::::::::: prereq
+::::::::::::::::::::::::::::::::::::::::::: checklist
 
-This episode requires you to have R and Git installed on your machine.
+### Check your setup!
+
+Before you work with this episode, make sure you have installed:
+
+ - [ ] R
+ - [ ] RStudio
+ - [ ] Git
+
+And please make sure you have a GitHub account you can connect to. 
 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
