@@ -4,6 +4,25 @@ teaching: 45
 exercises: 20
 ---
 
+::: instructor
+
+### Installation Woes for Linux Users
+
+The [installation section](#installing-the-workbench) should work well for Windows and Mac users, but it will probably be a PITA for Linux users, especially those who have never used R. There are two main reasons for this pain:
+
+1. **Linux packages are not pre-compiled**, which means that all packages need
+   to be compiled before they enter the library. For pure-R based packages
+   (e.g. {sandpaper}), the compilation takes less than half a second, but for
+   packages that contain C or C++ code (e.g. {xml2}, this can take up to a
+   minute or more, depending on how complex the package is.
+2. Related to the point above: **some packages require external C libraries**
+   that may not be present on the user's computer (e.g. `libxml` for {xml2} or
+   `libgit2` for {gert}. 
+
+Both of these caveats make things a bit of a headache on Linux systems.
+
+:::
+
 ::::::::::::::::::::::::::::::::::::::: objectives
 
 - Identify the key tools used in The Carpentries lesson infrastructure.
@@ -24,9 +43,17 @@ exercises: 20
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-::::::::::::::::::::::::::::::::::::::::::: prereq
+::::::::::::::::::::::::::::::::::::::::::: checklist
 
-This episode requires you to have R and Git installed on your machine.
+### Check your setup!
+
+Before you work with this episode, make sure you have installed:
+
+ - [ ] R
+ - [ ] RStudio
+ - [ ] Git
+
+And please make sure you have a GitHub account you can connect to. 
 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -46,6 +73,9 @@ using the Workbench.
 
 ## GitHub Pages
 
+From the beginning, Carpentries lessons have been freely available for all to
+use under a CC-BY license.
+
 The source of all The Carpentries lessons is made publicly-available in repositories on [GitHub].
 By making our repositories public like this,
 we encourage others to help us maintain and improve our lessons,
@@ -58,7 +88,7 @@ this has been how The Carpentries presents its lesson websites to the world.
 
 ## Using The Carpentries Workbench
 
-Carpentries lesson websites are built with [**The Carpentries Workbench**][workbench],
+Starting in 2023, Carpentries lesson websites will be built with [**The Carpentries Workbench**][workbench],
 a toolkit that converts Markdown and RMarkdown files into the HTML
 that can be served by GitHub Pages.
 
@@ -98,7 +128,7 @@ you should be presented with a brand new lesson repository.
 :::
 
 
-### Repository Files
+### Main Files and Folders
 
 The repository contains a number of files and folders. The most important files
 and folders are:
@@ -107,6 +137,17 @@ and folders are:
  - `instructors/` contains information useful for instructors such as instructor
    notes relevant for the overall lesson or extra exercises that could be useful
    for learners who would like an extra challenge
+ - `learners/` contains information that would be useful for learners such as
+   a reference document and setup instructions.
+ - `profiles/` contain learner profiles for people who might find this lesson
+   useful. This will help learners assess if the workshop is for them and help
+   the instructors know what they can expect from their audience.
+
+Note that The Workbench recognises both Markdown and RMarkdown filetypes. 
+
+::: callout
+
+### ... and the rest! 
 
 Most of these are source files for the content of our new lesson,
 but a few are accompanying files primarily intended for the repository itself
@@ -122,6 +163,8 @@ These are:
 
 We will address all of the files later in the workshop.
 For now, we will move on to complete the basic setup of the lesson.
+
+:::
 
 ### Configuring a Lesson Repository
 
@@ -152,9 +195,9 @@ click the gear wheel icon near the top right, to edit the _About_ box.
 Paste the Pages URL into the _Website_ box and click _Save changes_.
 
 After following these steps, when you navigate to the pages URL, you should be see a lesson website with The Carpentries logo and "Lesson Title" in the top-left corner.
-You may need to wait a few minutes for the website to be generated.
+You may need to wait a minute or two for the GitHub to render the website.
 
-#### `config.yaml`
+#### Setting global parameters in `config.yaml`
 
 The lesson title can be adjusted by modifying the `config.yaml` file in the repository.
 The `config.yaml` file contains several global parameters for a lesson---to
@@ -225,7 +268,7 @@ working with that repository on our own system.
 ## Installing the Workbench
 
 1. Open RStudio
-2. In the console, type the following commands:
+2. In the console, type the following commands to install the workbench and all the required packages:
 
 ```r
 # register the repositories for The Carpentries and CRAN
@@ -238,6 +281,8 @@ options(repos = c(
 install.packages(c("sandpaper", "varnish", "pegboard", "tinkr"))
 ```
 
+
+
 ::: prereq
 
 ### For Linux Users
@@ -248,60 +293,77 @@ ubuntu can be found using the following command:
 
 ```bash
 curl https://carpentries.r-universe.dev/stats/sysdeps 2> /dev/null \
-| jq -r '.library' 
+| jq -r '.library | select(. != null)'
 ```
+```output
+c++
+curl
+fontconfig
+freetype
+fribidi
+harfbuzz
+icu
+libgit2
+libjpeg-turbo
+libpng
+libtiff
+libxml2
+libxslt
+openssl
+```
+
 
 :::
 
 
-3. Test your installation:
+3. Test your installation: copy and paste this code and see if you get similar
+   output. 
 
 ```r
 library('sandpaper')
 library('fs')
 library('rmarkdown')
 rmarkdown::pandoc_version()
+#> [1] '2.18'
 tmp <- tempfile()
 sandpaper::no_package_cache()
+#> ℹ Consent for package cache revoked. Use `use_package_cache()` to undo.
 sandpaper::create_lesson(tmp, open = FALSE)
+#> → Creating Lesson in '/tmp/RtmpOBHY8v/file541125775e3a'...
+#> ℹ No schedule set, using Rmd files in 'episodes/' directory.
+#> → Creating Lesson in '/tmp/RtmpOBHY8v/file541125775e3a'...→ To remove this message, define your schedule in 'config.yaml' or use `set_episodes()` to generate it.
+#> → Creating Lesson in '/tmp/RtmpOBHY8v/file541125775e3a'...✔ First episode created in '/tmp/RtmpOBHY8v/file541125775e3a/episodes/01-introduction.Rmd'
+#> → Creating Lesson in '/tmp/RtmpOBHY8v/file541125775e3a'...ℹ Workflows up-to-date!
+#> → Creating Lesson in '/tmp/RtmpOBHY8v/file541125775e3a'...✔ Lesson successfully created in '/tmp/RtmpOBHY8v/file541125775e3a'
+#> → Creating Lesson in '/tmp/RtmpOBHY8v/file541125775e3a'...
+#> /tmp/RtmpOBHY8v/file541125775e3a
 sandpaper::build_lesson(tmp, preview = FALSE, quiet = TRUE)
 fs::dir_tree(tmp, recurse = 1)
-```
-
-```output
-[1] ‘2.12’
-ℹ Consent for package cache revoked. Use `use_package_cache()` to undo.
-ℹ No schedule set, using Rmd files in episodes/ directory.
-→ To remove this message, define your schedule in config.yaml or use `set_episodes()` to generate it.
-✔ First episode created in /tmp/RtmpxeJyVD/file45677ea639b2/episodes/introduction.Rmd
-ℹ Workflows up-to-date!
-✔ Lesson successfully created in /tmp/RtmpxeJyVD/file45677ea639b2
-/tmp/RtmpxeJyVD/file45677ea639b2
-/tmp/RtmpxeJyVD/file45677ea639b2
-├── CODE_OF_CONDUCT.md
-├── CONTRIBUTING.md
-├── LICENSE.md
-├── README.md
-├── config.yaml
-├── episodes
-│   ├── data
-│   ├── fig
-│   ├── files
-│   └── 01-introduction.Rmd
-├── index.md
-├── instructors
-│   └── instructor-notes.md
-├── learners
-│   └── setup.md
-├── links.md
-├── profiles
-│   └── learner-profiles.md
-└── site
-    ├── DESCRIPTION
-    ├── README.md
-    ├── _pkgdown.yaml
-    ├── built
-    └── docs
+#> /tmp/RtmpOBHY8v/file541125775e3a
+#> ├── CODE_OF_CONDUCT.md
+#> ├── CONTRIBUTING.md
+#> ├── LICENSE.md
+#> ├── README.md
+#> ├── config.yaml
+#> ├── episodes
+#> │   ├── data
+#> │   ├── fig
+#> │   ├── files
+#> │   └── 01-introduction.Rmd
+#> ├── index.md
+#> ├── instructors
+#> │   └── instructor-notes.md
+#> ├── learners
+#> │   └── setup.md
+#> ├── links.md
+#> ├── profiles
+#> │   └── learner-profiles.md
+#> └── site
+#>     ├── DESCRIPTION
+#>     ├── README.md
+#>     ├── _pkgdown.yaml
+#>     ├── built
+#>     └── docs
 ```
 
 
@@ -318,6 +380,20 @@ with the desktop commands: <https://rstudio.cloud/content/4442910>.
 
 :::
 
+## Previewing the Lesson
+
+To see how the lesson website looks with this new episode added,
+we can build and serve a local version of the site, which will be automatically
+updated whenever we make changes to the source files.
+
+```R
+sandpaper::serve()
+```
+
+After a short wait, a preview of the built lesson site should pop into the _Viewer_
+panel of RStudio. 
+(You can "pop" it out into a web browser tab by clicking the little
+_Show in new window_ button near the top of the Viewer panel.)
 
 
 ## Lesson Content Source Files 
@@ -386,36 +462,22 @@ exercises: 2
 ### Creating a New Episode
 
 To add a new episode to a lesson,
-we can run the `sandpaper::create_episode` function:
+we can run the `sandpaper::create_episode_rmd()` function:
 
 ```r
-sandpaper::create_episode("next-episode")
+sandpaper::create_episode_rmd("Next Episode")
 ```
 
-When you call this function, you should see a new file appear in the
-`episodes` folder.
+When you call this function, you should see a new file called
+`02-next-episode.Rmd` appear in the `episodes` folder.
 It will have the same example content as `01-introduction.Rmd` but 
 with a different title in the YAML header, based on the name you specified
 for the new episode in the call to `create_episode`.
 
-## Previewing the Lesson
-
-To see how the lesson website looks with this new episode added,
-we can build and serve a local version of the site, which will be automatically
-updated whenever we make changes to the source files.
-
-```R
-sandpaper::serve()
-```
-
-After a short wait, a preview of the built lesson site should pop into the _Viewer_
-panel of RStudio. 
-(You can "pop" it out into a web browser tab by clicking the little
-_Show in new window_ button near the top of the Viewer panel.)
 
 ## Pushing to GitHub
 
-push new episode back to github
+Push new episode back to github using either the Git tab in the top left pane or 
 
 ## Editing an Episode
 
@@ -492,5 +554,5 @@ pie(
 [styles-contributors]: https://github.com/carpentries/styles/graphs/contributors
 [swc-home]: https://software-carpentry.org/
 [YAML]: https://yaml.org/
-[set-config](https://carpentries.github.io/sandpaper/reference/set_config.html#default-keypairs-known-by-sandpaper)
+[set-config]: https://carpentries.github.io/sandpaper/reference/set_config.html#default-keypairs-known-by-sandpaper
 
