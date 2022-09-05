@@ -268,7 +268,7 @@ working with that repository on our own system.
 ## Installing the Workbench
 
 1. Open RStudio
-2. In the console, type the following commands:
+2. In the console, type the following commands to install the workbench and all the required packages:
 
 ```r
 # register the repositories for The Carpentries and CRAN
@@ -293,60 +293,77 @@ ubuntu can be found using the following command:
 
 ```bash
 curl https://carpentries.r-universe.dev/stats/sysdeps 2> /dev/null \
-| jq -r '.library' 
+| jq -r '.library | select(. != null)'
 ```
+```output
+c++
+curl
+fontconfig
+freetype
+fribidi
+harfbuzz
+icu
+libgit2
+libjpeg-turbo
+libpng
+libtiff
+libxml2
+libxslt
+openssl
+```
+
 
 :::
 
 
-3. Test your installation:
+3. Test your installation: copy and paste this code and see if you get similar
+   output. 
 
 ```r
 library('sandpaper')
 library('fs')
 library('rmarkdown')
 rmarkdown::pandoc_version()
+#> [1] '2.18'
 tmp <- tempfile()
 sandpaper::no_package_cache()
+#> ℹ Consent for package cache revoked. Use `use_package_cache()` to undo.
 sandpaper::create_lesson(tmp, open = FALSE)
+#> → Creating Lesson in '/tmp/RtmpOBHY8v/file541125775e3a'...
+#> ℹ No schedule set, using Rmd files in 'episodes/' directory.
+#> → Creating Lesson in '/tmp/RtmpOBHY8v/file541125775e3a'...→ To remove this message, define your schedule in 'config.yaml' or use `set_episodes()` to generate it.
+#> → Creating Lesson in '/tmp/RtmpOBHY8v/file541125775e3a'...✔ First episode created in '/tmp/RtmpOBHY8v/file541125775e3a/episodes/01-introduction.Rmd'
+#> → Creating Lesson in '/tmp/RtmpOBHY8v/file541125775e3a'...ℹ Workflows up-to-date!
+#> → Creating Lesson in '/tmp/RtmpOBHY8v/file541125775e3a'...✔ Lesson successfully created in '/tmp/RtmpOBHY8v/file541125775e3a'
+#> → Creating Lesson in '/tmp/RtmpOBHY8v/file541125775e3a'...
+#> /tmp/RtmpOBHY8v/file541125775e3a
 sandpaper::build_lesson(tmp, preview = FALSE, quiet = TRUE)
 fs::dir_tree(tmp, recurse = 1)
-```
-
-```output
-[1] ‘2.12’
-ℹ Consent for package cache revoked. Use `use_package_cache()` to undo.
-ℹ No schedule set, using Rmd files in episodes/ directory.
-→ To remove this message, define your schedule in config.yaml or use `set_episodes()` to generate it.
-✔ First episode created in /tmp/RtmpxeJyVD/file45677ea639b2/episodes/introduction.Rmd
-ℹ Workflows up-to-date!
-✔ Lesson successfully created in /tmp/RtmpxeJyVD/file45677ea639b2
-/tmp/RtmpxeJyVD/file45677ea639b2
-/tmp/RtmpxeJyVD/file45677ea639b2
-├── CODE_OF_CONDUCT.md
-├── CONTRIBUTING.md
-├── LICENSE.md
-├── README.md
-├── config.yaml
-├── episodes
-│   ├── data
-│   ├── fig
-│   ├── files
-│   └── 01-introduction.Rmd
-├── index.md
-├── instructors
-│   └── instructor-notes.md
-├── learners
-│   └── setup.md
-├── links.md
-├── profiles
-│   └── learner-profiles.md
-└── site
-    ├── DESCRIPTION
-    ├── README.md
-    ├── _pkgdown.yaml
-    ├── built
-    └── docs
+#> /tmp/RtmpOBHY8v/file541125775e3a
+#> ├── CODE_OF_CONDUCT.md
+#> ├── CONTRIBUTING.md
+#> ├── LICENSE.md
+#> ├── README.md
+#> ├── config.yaml
+#> ├── episodes
+#> │   ├── data
+#> │   ├── fig
+#> │   ├── files
+#> │   └── 01-introduction.Rmd
+#> ├── index.md
+#> ├── instructors
+#> │   └── instructor-notes.md
+#> ├── learners
+#> │   └── setup.md
+#> ├── links.md
+#> ├── profiles
+#> │   └── learner-profiles.md
+#> └── site
+#>     ├── DESCRIPTION
+#>     ├── README.md
+#>     ├── _pkgdown.yaml
+#>     ├── built
+#>     └── docs
 ```
 
 
@@ -445,14 +462,14 @@ exercises: 2
 ### Creating a New Episode
 
 To add a new episode to a lesson,
-we can run the `sandpaper::create_episode` function:
+we can run the `sandpaper::create_episode_rmd()` function:
 
 ```r
-sandpaper::create_episode("next-episode")
+sandpaper::create_episode_rmd("Next Episode")
 ```
 
-When you call this function, you should see a new file appear in the
-`episodes` folder.
+When you call this function, you should see a new file called
+`02-next-episode.Rmd` appear in the `episodes` folder.
 It will have the same example content as `01-introduction.Rmd` but 
 with a different title in the YAML header, based on the name you specified
 for the new episode in the call to `create_episode`.
@@ -460,7 +477,7 @@ for the new episode in the call to `create_episode`.
 
 ## Pushing to GitHub
 
-push new episode back to github
+Push new episode back to github using either the Git tab in the top left pane or 
 
 ## Editing an Episode
 
