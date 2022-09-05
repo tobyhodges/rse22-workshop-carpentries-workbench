@@ -492,5 +492,5 @@ pie(
 [styles-contributors]: https://github.com/carpentries/styles/graphs/contributors
 [swc-home]: https://software-carpentry.org/
 [YAML]: https://yaml.org/
-[set-config](https://carpentries.github.io/sandpaper/reference/set_config.html#default-keypairs-known-by-sandpaper)
+[set-config]: https://carpentries.github.io/sandpaper/reference/set_config.html#default-keypairs-known-by-sandpaper
 
