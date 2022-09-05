@@ -318,6 +318,20 @@ with the desktop commands: <https://rstudio.cloud/content/4442910>.
 
 :::
 
+## Previewing the Lesson
+
+To see how the lesson website looks with this new episode added,
+we can build and serve a local version of the site, which will be automatically
+updated whenever we make changes to the source files.
+
+```R
+sandpaper::serve()
+```
+
+After a short wait, a preview of the built lesson site should pop into the _Viewer_
+panel of RStudio. 
+(You can "pop" it out into a web browser tab by clicking the little
+_Show in new window_ button near the top of the Viewer panel.)
 
 
 ## Lesson Content Source Files 
@@ -398,20 +412,6 @@ It will have the same example content as `01-introduction.Rmd` but
 with a different title in the YAML header, based on the name you specified
 for the new episode in the call to `create_episode`.
 
-## Previewing the Lesson
-
-To see how the lesson website looks with this new episode added,
-we can build and serve a local version of the site, which will be automatically
-updated whenever we make changes to the source files.
-
-```R
-sandpaper::serve()
-```
-
-After a short wait, a preview of the built lesson site should pop into the _Viewer_
-panel of RStudio. 
-(You can "pop" it out into a web browser tab by clicking the little
-_Show in new window_ button near the top of the Viewer panel.)
 
 ## Pushing to GitHub
 
