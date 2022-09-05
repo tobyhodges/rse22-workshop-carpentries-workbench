@@ -4,6 +4,25 @@ teaching: 45
 exercises: 20
 ---
 
+::: instructor
+
+### Installation Woes for Linux Users
+
+The [installation section](#installing-the-workbench) should work well for Windows and Mac users, but it will probably be a PITA for Linux users, especially those who have never used R. There are two main reasons for this pain:
+
+1. **Linux packages are not pre-compiled**, which means that all packages need
+   to be compiled before they enter the library. For pure-R based packages
+   (e.g. {sandpaper}), the compilation takes less than half a second, but for
+   packages that contain C or C++ code (e.g. {xml2}, this can take up to a
+   minute or more, depending on how complex the package is.
+2. Related to the point above: **some packages require external C libraries**
+   that may not be present on the user's computer (e.g. `libxml` for {xml2} or
+   `libgit2` for {gert}. 
+
+Both of these caveats make things a bit of a headache on Linux systems.
+
+:::
+
 ::::::::::::::::::::::::::::::::::::::: objectives
 
 - Identify the key tools used in The Carpentries lesson infrastructure.
@@ -261,6 +280,8 @@ options(repos = c(
 # Install the template packages to your R library
 install.packages(c("sandpaper", "varnish", "pegboard", "tinkr"))
 ```
+
+
 
 ::: prereq
 
