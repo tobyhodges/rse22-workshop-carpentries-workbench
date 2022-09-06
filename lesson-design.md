@@ -135,6 +135,8 @@ def shout(input_string):
 ::::::
 :::
 
+![An example of a "fill-in-the-blanks" exercise.](fig/fitb-example.png){alt='a screenshot of the fill-in-the-blanks example exercise written above, included for display purposes.'}
+
 This format of exercise is best-suited to novices because it provides
 a lot of scaffolding: most of the code and syntax is already in place,
 and blanks should have been inserted carefully, to assess the specific
@@ -172,7 +174,120 @@ This type of exercise presents some broken code and the desired result,
 and asks the learner to make the smallest possible change to fix the program.
 
 :::
+
+::: challenge
+## Example Exercise: Parsons Problem
+The lines of code below are intended to normalise the holdout set or,
+if the user has chosen to skip normalisation,
+to check whether the holdout set has already been normalised and exit the
+program if not.
+
+However, the order of these lines has been scrambled.
+Reorganise the lines to make the program run correctly.
+You may wish to add some indentation to help make the code more readable.
+
+```R
+if (normalize) {
+if (verbose > 1) {
+feat.test <- get.norm_feat.matrix(siamcat.external)
+message("+ Performing frozen normalization on holdout set")
+siamcat.external <- normalize.features(siamcat.external, norm.param = norm_params(siamcat.trained),feature.type='original', verbose = verbose)
+warning("WARNING: holdout set is not being normalized!")
+if (is.null(norm_feat(siamcat.external, verbose=0))){
+stop('Holdout set has not been normalized yet!')
+} else {
+}
+}
+}
+
+```
+
 :::::: solution
+
+```R
+if (normalize) {
+    if (verbose > 1) {
+        message("+ Performing frozen normalization on holdout set")
+    }
+    siamcat.external <- normalize.features(
+        siamcat.external, norm.param = norm_params(siamcat.trained),
+        feature.type='original', verbose = verbose)
+} else {
+    warning("WARNING: holdout set is not being normalized!")
+    if (is.null(norm_feat(siamcat.external, verbose=0))){
+        stop('Holdout set has not been normalized yet!')
+    }
+}
+```
+
+::::::
+
+:::
+
+![An example of a parsons problem exercise.](fig/parsons-example.png){alt='a screenshot of the parsons problem example exercise written above, included for display purposes.'}
+
+::: challenge
+## Example Exercise: Theme & Variations
+This program selects the pixels in a rectangular area at the top-left
+of the input image, and sets the intensity of those pixels to zero.
+
+Adjust the program so that it instead selects an area at the
+bottom-right of the image.
+
+```python
+def top_left_to_zero(image, rows, columns):
+    image[0:rows, 0:columns] = 0
+```
+
+:::::: solution
+
+```python
+def bottom_right_to_zero(image, rows, columns):
+    image[image.shape[0]-rows:image.shape[0], image.shape[1]-columns:image.shape[1]] = 0
+```
+
+::::::
+
+:::
+
+![An example of a theme and variations exercise.](fig/theme-variations-example.png){alt='a screenshot of the theme and variations example exercise written above, included for display purposes.'}
+
+::: challenge
+## Example Exercise: Minimal Fix
+This function is supposed to test whether a number lies within a range. 
+Make one small change so that it actually does so.
+
+```python
+def inside(point, lower, higher):
+    if (point <= lower):
+        return False
+    elif (point <= higher):
+        return False
+    else:
+        return True
+```
+
+(This example taken from Greg Wilson's _Teaching Tech Together_.)
+
+:::::: solution
+
+```python
+def inside(point, lower, higher):
+    if (point <= lower):
+        return False
+    elif (point >= higher):
+        return False
+    else:
+        return True
+```
+
+::::::
+
+:::
+
+![An example of a minimal fix exercise.](fig/minimal-fix-example.png){alt='a screenshot of the minimal fix example exercise written above, included for display purposes.'}
+
+:::::: instructor
 
 1. parsons problem - "construct", "define", "arrange", "organise", "trace"
 2. theme & variations - "trace", "identify", "find", "choose", "design"
