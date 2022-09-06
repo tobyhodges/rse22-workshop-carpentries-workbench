@@ -33,15 +33,8 @@
   <div class="container-fluid top-nav-container">
     <div class="col-md-6">
       <div class="large-logo">
-        <img alt="The Carpentries" src="../assets/images/carpentries-logo.svg"><abbr class="icon" title="This lesson is in the pre-alpha phase, which means that it is in early development, but has not yet been taught." style="text-decoration: unset">
-           
-          <a href="https://cdh.carpentries.org/the-lesson-life-cycle.html#early-development-pre-alpha-through-alpha" class="external-link alert-link" style="color: #383838">Pre-Alpha
-            <i aria-hidden="true" class="icon" data-feather="alert-octagon" style="color: #FF4955"></i>
-          </a>
-          <span class="visually-hidden">This lesson is in the pre-alpha phase, which means that it is in early development, but has not yet been taught.</span>
-        </abbr>
-        
-      </div>
+        <img alt="The Carpentries" src="../assets/images/carpentries-logo.svg">
+</div>
     </div>
     <div class="selector-container ">
       
@@ -361,7 +354,7 @@
   Introductions
   </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
 <div class="accordion-body">
 <p>At this point, the workshop leads should introduce themselves.</p>
 </div>
@@ -517,7 +510,7 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
-<p>This format of exercise is best-suited to novices because it provides a lot of scaffolding: most of the code and syntax is already in place, and blanks should have been inserted carefully, to assess the specific skill or concept that has just been taught. This allows the learner to focus on this particular concept or skill, and requires them to demonstrate their understanding when solving the problem.</p>
+<figure><img src="../fig/fitb-example.png" alt="a screenshot of the fill-in-the-blanks example exercise written above, included for display purposes." class="figure mx-auto d-block"><figcaption>An example of a “fill-in-the-blanks” exercise.</figcaption></figure><p>This format of exercise is best-suited to novices because it provides a lot of scaffolding: most of the code and syntax is already in place, and blanks should have been inserted carefully, to assess the specific skill or concept that has just been taught. This allows the learner to focus on this particular concept or skill, and requires them to demonstrate their understanding when solving the problem.</p>
 <p>A fill-in-the-blanks exercise is best suited to assessing objectives with action verbs like “identify”, “use”, or “define”, when linked closely to some specific syntactic element or concept, e.g.  “define a loop to import data from an arbitrary number of input files.”</p>
 <div id="discussion1" class="callout discussion">
 <div class="callout-square">
@@ -537,6 +530,36 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
+<div id="challenge2" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="example-exercise-parsons-problem" class="callout-inner">
+<h3 class="callout-title">Example Exercise: Parsons Problem<a class="anchor" aria-label="anchor" href="#example-exercise-parsons-problem"></a>
+</h3>
+<div class="callout-content">
+<p>The lines of code below are intended to normalise the holdout set or, if the user has chosen to skip normalisation, to check whether the holdout set has already been normalised and exit the program if not.</p>
+<p>However, the order of these lines has been scrambled. Reorganise the lines to make the program run correctly. You may wish to add some indentation to help make the code more readable.</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="va">normalize</span><span class="op">)</span> <span class="op">{</span></span>
+<span><span class="kw">if</span> <span class="op">(</span><span class="va">verbose</span> <span class="op">&gt;</span> <span class="fl">1</span><span class="op">)</span> <span class="op">{</span></span>
+<span><span class="va">feat.test</span> <span class="op">&lt;-</span> <span class="fu">get.norm_feat.matrix</span><span class="op">(</span><span class="va">siamcat.external</span><span class="op">)</span></span>
+<span><span class="fu">message</span><span class="op">(</span><span class="st">"+ Performing frozen normalization on holdout set"</span><span class="op">)</span></span>
+<span><span class="va">siamcat.external</span> <span class="op">&lt;-</span> <span class="fu">normalize.features</span><span class="op">(</span><span class="va">siamcat.external</span>, norm.param <span class="op">=</span> <span class="fu">norm_params</span><span class="op">(</span><span class="va">siamcat.trained</span><span class="op">)</span>,feature.type<span class="op">=</span><span class="st">'original'</span>, verbose <span class="op">=</span> <span class="va">verbose</span><span class="op">)</span></span>
+<span><span class="kw">warning</span><span class="op">(</span><span class="st">"WARNING: holdout set is not being normalized!"</span><span class="op">)</span></span>
+<span><span class="kw">if</span> <span class="op">(</span><span class="fu">is.null</span><span class="op">(</span><span class="fu">norm_feat</span><span class="op">(</span><span class="va">siamcat.external</span>, verbose<span class="op">=</span><span class="fl">0</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">{</span></span>
+<span><span class="kw">stop</span><span class="op">(</span><span class="st">'Holdout set has not been normalized yet!'</span><span class="op">)</span></span>
+<span><span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
+<span><span class="op">}</span></span>
+<span><span class="op">}</span></span>
+<span><span class="op">}</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
 <div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
@@ -545,6 +568,124 @@ any links that you are not going to use.
   </h4>
 </button>
 <div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="va">normalize</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="kw">if</span> <span class="op">(</span><span class="va">verbose</span> <span class="op">&gt;</span> <span class="fl">1</span><span class="op">)</span> <span class="op">{</span></span>
+<span>        <span class="fu">message</span><span class="op">(</span><span class="st">"+ Performing frozen normalization on holdout set"</span><span class="op">)</span></span>
+<span>    <span class="op">}</span></span>
+<span>    <span class="va">siamcat.external</span> <span class="op">&lt;-</span> <span class="fu">normalize.features</span><span class="op">(</span></span>
+<span>        <span class="va">siamcat.external</span>, norm.param <span class="op">=</span> <span class="fu">norm_params</span><span class="op">(</span><span class="va">siamcat.trained</span><span class="op">)</span>,</span>
+<span>        feature.type<span class="op">=</span><span class="st">'original'</span>, verbose <span class="op">=</span> <span class="va">verbose</span><span class="op">)</span></span>
+<span><span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
+<span>    <span class="kw">warning</span><span class="op">(</span><span class="st">"WARNING: holdout set is not being normalized!"</span><span class="op">)</span></span>
+<span>    <span class="kw">if</span> <span class="op">(</span><span class="fu">is.null</span><span class="op">(</span><span class="fu">norm_feat</span><span class="op">(</span><span class="va">siamcat.external</span>, verbose<span class="op">=</span><span class="fl">0</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">{</span></span>
+<span>        <span class="kw">stop</span><span class="op">(</span><span class="st">'Holdout set has not been normalized yet!'</span><span class="op">)</span></span>
+<span>    <span class="op">}</span></span>
+<span><span class="op">}</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<figure><img src="../fig/parsons-example.png" alt="a screenshot of the parsons problem example exercise written above, included for display purposes." class="figure mx-auto d-block"><figcaption>An example of a parsons problem exercise.</figcaption></figure><div id="challenge3" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="example-exercise-theme-variations" class="callout-inner">
+<h3 class="callout-title">Example Exercise: Theme &amp; Variations<a class="anchor" aria-label="anchor" href="#example-exercise-theme-variations"></a>
+</h3>
+<div class="callout-content">
+<p>This program selects the pixels in a rectangular area at the top-left of the input image, and sets the intensity of those pixels to zero.</p>
+<p>Adjust the program so that it instead selects an area at the bottom-right of the image.</p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> top_left_to_zero(image, rows, columns):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    image[<span class="dv">0</span>:rows, <span class="dv">0</span>:columns] <span class="op">=</span> <span class="dv">0</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3">
+  Show me the solution
+  </h4>
+</button>
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> bottom_right_to_zero(image, rows, columns):</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    image[image.shape[<span class="dv">0</span>]<span class="op">-</span>rows:image.shape[<span class="dv">0</span>], image.shape[<span class="dv">1</span>]<span class="op">-</span>columns:image.shape[<span class="dv">1</span>]] <span class="op">=</span> <span class="dv">0</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<figure><img src="../fig/theme-variations-example.png" alt="a screenshot of the theme and variations example exercise written above, included for display purposes." class="figure mx-auto d-block"><figcaption>An example of a theme and variations exercise.</figcaption></figure><div id="challenge4" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="example-exercise-minimal-fix" class="callout-inner">
+<h3 class="callout-title">Example Exercise: Minimal Fix<a class="anchor" aria-label="anchor" href="#example-exercise-minimal-fix"></a>
+</h3>
+<div class="callout-content">
+<p>This function is supposed to test whether a number lies within a range. Make one small change so that it actually does so.</p>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> inside(point, lower, higher):</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (point <span class="op">&lt;=</span> lower):</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> (point <span class="op">&lt;=</span> higher):</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">True</span></span></code></pre>
+</div>
+<p>(This example taken from Greg Wilson’s <em>Teaching Tech Together</em>.)</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
+  <h4 class="accordion-header" id="headingSolution4">
+  Show me the solution
+  </h4>
+</button>
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> inside(point, lower, higher):</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (point <span class="op">&lt;=</span> lower):</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> (point <span class="op">&gt;=</span> higher):</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">True</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<figure><img src="../fig/minimal-fix-example.png" alt="a screenshot of the minimal fix example exercise written above, included for display purposes." class="figure mx-auto d-block"><figcaption>An example of a minimal fix exercise.</figcaption></figure><div id="accordionInstructor1" class="accordion instructor-note accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
+  <h3 class="accordion-header" id="headingInstructor1">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div>
+  Instructor Note
+  </h3>
+</button>
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>parsons problem - “construct”, “define”, “arrange”, “organise”, “trace”</li>
@@ -614,7 +755,7 @@ any links that you are not going to use.
   Installation Woes for Linux Users
   </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
 <div class="accordion-body">
 <p>The <a href="#installing-the-workbench">installation section</a> should work well for Windows and Mac users, but it will probably be a PITA for Linux users, especially those who have never used R. There are two main reasons for this pain:</p>
 <ol style="list-style-type: decimal">
@@ -1097,7 +1238,7 @@ Git</li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">MARKDOWN<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
