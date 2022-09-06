@@ -26,10 +26,12 @@ exercises: 10
 - We want to better capture all of the contributions that make a lesson exist, and make that information more visible.
 - With that in mind, would like to gather feedback from you all about a new page we want to introduce to lessons that use the Workbench: a Lesson Credit page.
 
-TODO add lesson life cycle figure again here.
+![A reminder of the lesson life cycle presented earlier.](fig/life-cycle.svg){alt='the lesson development life cycle figure presented in an earlier episode.'}
 
 ::: instructor
+
 the next discussion exercise will require a rough sketch of the lesson life cycle on the wall/a white board, and sticky notes for people to write on and stick to that sketch.
+
 :::
 
 ::: discussion

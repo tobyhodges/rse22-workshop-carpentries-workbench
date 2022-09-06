@@ -48,7 +48,9 @@ At this point, the workshop leads should introduce themselves.
 
 ## The Carpentries
 
-The Carpentries builds global capacity in essential data and computational skills
+![](fig/TheCarpentries.svg){alt='The Carpentries'}
+
+[The Carpentries][carpentries] builds global capacity in essential data and computational skills
 for conducting efficient, open, and reproducible research. 
 We train and foster an active, inclusive, diverse community of learners and instructors
 that promotes and models the importance of software and data in research. 
@@ -62,6 +64,7 @@ and published under a CC-BY license.
 Carpentries Instructors, who are mostly volunteering their time to teach,
 have taught more than 3600 workshops, in more than 70 countries, 
 across all seven continents.
+
 In addition to these Instructors, there are many other roles that people take on
 in The Carpentries community. For example, we have:
 
@@ -80,16 +83,20 @@ either in their target audience or in the skills they teach,
 but all share a common goal of promoting efficiency and reproducibility
 in research and research-related disciplines.
 
+![The number of lessons under development in The Carpentries community has grown quickly in recent years.](fig/lesson-growth.svg){alt='line chart showing growth in the number of lesson repositories in The Carpentries since 2015. Since 2019, the number of repositories in The Carpentires Incubator has grown to represent mare than half of the total 158 lesson repositories.'}
+
 In addition to The Carpentries official lessons, our community members
 use our open source infrastructure to create lessons of their own.
 This community development of new lessons is taking place in The Carpentries Incubator,
 a space for the community to collaborate on their own lessons with support from
 other community members and The Carpentries Core Team.
 
+![](fig/life-cycle.svg){alt='Schematic of a life cycle for lessons that includes four stages: pre-alpha, where a lesson is being designed and drafted for the first time; alpha, where the lesson is tested in pilot workshops by its authors; beta, where the lesson is tested in pilot workshops by other instructors; and stable, where the lesson has been thoroughly tested and can be relied upon by other instructors to be ready to teach and unlikely to undergo significant changes without warning. Stable lessons can be peer reviewed in The Carpentries Lab and can join the Lab or one of The Carpentries official lesson programs.'}
+
 The Carpentries Incubator forms the first part of a pathway for the development of lessons,
 which can lead to open peer review and publication, and/or adoption by one of The Carpentries lesson programs as a new official lesson.
 
-We are not going to talk any more about that pathway for lesson development today,
+We are not going to talk much about that pathway for lesson development today,
 because we are also presenting a poster on exactly that topic at this conference.
 Come and find us there during the poster session - or any other time during the week -
 to talk more about our systems and processes for lesson development, review, and publication!
