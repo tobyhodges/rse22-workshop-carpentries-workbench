@@ -148,6 +148,7 @@ specific syntactic element or concept, e.g.
 "define a loop to import data from an arbitrary number of input files."
 
 ::: discussion
+
 ## More Exercise Formats
 
 Here are three more exercise formats.
@@ -170,6 +171,7 @@ the learner to adapt that to a new purpose.
 This type of exercise presents some broken code and the desired result,
 and asks the learner to make the smallest possible change to fix the program.
 
+:::
 :::::: solution
 
 1. parsons problem - "construct", "define", "arrange", "organise", "trace"
@@ -178,7 +180,6 @@ and asks the learner to make the smallest possible change to fix the program.
 
 ::::::
 
-:::
 
 For more ideas about exercise formats, read 
 [the _Exercise Types_ chapter of _Teaching Tech Together_ by Greg Wilson][ttt-exercises].
