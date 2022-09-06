@@ -150,6 +150,7 @@ specific syntactic element or concept, e.g.
 "define a loop to import data from an arbitrary number of input files."
 
 ::: discussion
+
 ## More Exercise Formats
 
 Here are three more exercise formats.
@@ -293,6 +294,7 @@ def inside(point, lower, higher):
 3. minimal fix - "debug", "diagnose", "identify", "choose", "find", "fix"
 
 ::::::
+
 
 For more ideas about exercise formats, read 
 [the _Exercise Types_ chapter of _Teaching Tech Together_ by Greg Wilson][ttt-exercises].
