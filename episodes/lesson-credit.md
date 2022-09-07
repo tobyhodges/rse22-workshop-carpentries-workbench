@@ -49,9 +49,9 @@ the next discussion exercise will require a rough sketch of the lesson life cycl
 
 Using more sticky notes, give us feedback/your ideas on the following, according to sticky note colour:
 
-- **blue**: what is missing from this page?
+- **pink**: what is missing from this page?
 - **yellow**: who could be the target audiences for this page?
-- **orange**: anything else you would like to tell us
+- **green**: anything else you would like to tell us
 
 Stick your notes to the wall on your way out of the room.
 
