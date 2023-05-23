@@ -260,7 +260,7 @@
   Installation Woes for Linux Users
   </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
 <div class="accordion-body">
 <p>The <a href="#installing-the-workbench">installation section</a> should work well for Windows and Mac users, but it will probably be a PITA for Linux users, especially those who have never used R. There are two main reasons for this pain:</p>
 <ol style="list-style-type: decimal"><li>
@@ -300,12 +300,12 @@
 </div>
 </div>
 </div>
-<div id="checklist1" class="callout checklist">
+<div id="check-your-setup" class="callout checklist">
 <div class="callout-square">
 <i class="callout-icon" data-feather="check-square"></i>
 </div>
 <div id="check-your-setup" class="callout-inner">
-<h3 class="callout-title">Check your setup!<a class="anchor" aria-label="anchor" href="#checklist1"></a>
+<h3 class="callout-title">Check your setup!<a class="anchor" aria-label="anchor" href="#check-your-setup"></a>
 </h3>
 <div class="callout-content">
 <p>Before you work with this episode, make sure you have installed:</p>
@@ -345,12 +345,12 @@ Git</li>
 <li>
 <a href="https://github.com/carpentries/workbench-template-rmd/generate" class="external-link">An RMarkdown template</a>, best suited to lessons that will include R source code that will generate output.</li>
 </ol><p>We are going to use the <strong>RMarkdown template</strong> in this workshop.</p>
-<div id="discussion1" class="callout discussion">
+<div id="creating-a-new-lesson-repository" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="creating-a-new-lesson-repository" class="callout-inner">
-<h3 class="callout-title">Creating a new lesson repository<a class="anchor" aria-label="anchor" href="#discussion1"></a>
+<h3 class="callout-title">Creating a new lesson repository<a class="anchor" aria-label="anchor" href="#creating-a-new-lesson-repository"></a>
 </h3>
 <div class="callout-content">
 <p>Follow the steps demonstrated by the workshop lead:</p>
@@ -382,12 +382,12 @@ Git</li>
 <li>
 <code>profiles/</code> contain learner profiles for people who might find this lesson useful. This will help learners assess if the workshop is for them and help the instructors know what they can expect from their audience.</li>
 </ul><p>Note that The Workbench recognises both Markdown and RMarkdown filetypes.</p>
-<div id="callout1" class="callout callout">
+<div id="and-the-rest" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="and-the-rest" class="callout-inner">
-<h3 class="callout-title">… and the rest!<a class="anchor" aria-label="anchor" href="#callout1"></a>
+<h3 class="callout-title">… and the rest!<a class="anchor" aria-label="anchor" href="#and-the-rest"></a>
 </h3>
 <div class="callout-content">
 <p>Most of these are source files for the content of our new lesson, but a few are accompanying files primarily intended for the repository itself rather than the lesson website. These are:</p>
@@ -407,12 +407,12 @@ Git</li>
 <div class="section level4">
 <h4 id="activating-github-pages">Activating GitHub Pages<a class="anchor" aria-label="anchor" href="#activating-github-pages"></a></h4>
 <p>We need to tell GitHub to begin serving the lesson website via GitHub Pages. To do this, navigate to <em>Settings</em>, then choose <em>Pages</em> from the left sidebar. Under <em>Source</em>, choose the <code>gh-pages</code> branch, leave the folder set to <code>/ (root)</code>, and click <em>Save</em>. Now, copy the URL in the box: this will be the address of your lesson site.</p>
-<div id="callout2" class="callout callout">
+<div id="which-branch-to-use" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="which-branch-to-use" class="callout-inner">
-<h3 class="callout-title">Which branch to use?<a class="anchor" aria-label="anchor" href="#callout2"></a>
+<h3 class="callout-title">Which branch to use?<a class="anchor" aria-label="anchor" href="#which-branch-to-use"></a>
 </h3>
 <div class="callout-content">
 <p>Although we configure GitHub Pages to serve the lesson website from the <code>gh-pages</code> branch, <strong>the default working branch for a lesson will be <code>main</code></strong>. For the rest of this training, you should add and edit files on <code>main</code>, and in future, when you open Pull Requests to update the lesson content, these should also be made to <code>main</code>. The <code>gh-pages</code> branch should never be modified by anyone other than the automated actions-user account.</p>
@@ -426,12 +426,12 @@ Git</li>
 <h4 id="setting-global-parameters-in-config-yaml">Setting global parameters in <code>config.yaml</code>
 <a class="anchor" aria-label="anchor" href="#setting-global-parameters-in-config-yaml"></a></h4>
 <p>The lesson title can be adjusted by modifying the <code>config.yaml</code> file in the repository. The <code>config.yaml</code> file contains several global parameters for a lesson—to determine some of the page styling, contact details for the lesson, etc—and is written in <em><a href="https://yaml.org/" class="external-link">YAML</a></em>, a structured file format of key-pair values. As well as the title of the lesson, you can and should adjust some of <a href="https://carpentries.github.io/sandpaper/reference/set_config.html#default-keypairs-known-by-sandpaper" class="external-link">the other values in <code>config.yaml</code></a>, but you should not need to add new values or learn a lot about YAML to be able to configure your lesson.</p>
-<div id="discussion2" class="callout discussion">
+<div id="practice-with-config.yaml-5-minutes" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="practice-with-config.yaml-5-minutes" class="callout-inner">
-<h3 class="callout-title">Practice with <code>config.yaml</code> (5 minutes)<a class="anchor" aria-label="anchor" href="#discussion2"></a>
+<h3 class="callout-title">Practice with <code>config.yaml</code> (5 minutes)<a class="anchor" aria-label="anchor" href="#practice-with-config.yaml-5-minutes"></a>
 </h3>
 <div class="callout-content">
 <p>Complete the configuration of your lesson by adjusting the following fields in <code>config.yaml</code>:</p>
@@ -447,12 +447,12 @@ Git</li>
 </div>
 </div>
 </div>
-<div id="callout3" class="callout callout">
+<div id="improving-the-readme.md" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="improving-the-readme.md" class="callout-inner">
-<h3 class="callout-title">Improving the <code>README.md</code><a class="anchor" aria-label="anchor" href="#callout3"></a>
+<h3 class="callout-title">Improving the <code>README.md</code><a class="anchor" aria-label="anchor" href="#improving-the-readme.html"></a>
 </h3>
 <div class="callout-content">
 <p>The <code>README.md</code> file is the “front page” of your lesson repository on GitHub, and is written in Markdown. You should use it to provide basic information about the project, for anyone who finds their way to the source files for your lesson. Although we do not have time in this workshop, if you intend to keep working on your lesson when you leave, we recommend that you take a few minutes to update the README with some basic information about the project, e.g.:</p>
@@ -492,12 +492,12 @@ Git</li>
 <span><span class="co"># Install the template packages to your R library</span></span>
 <span><span class="fu">install.packages</span><span class="op">(</span><span class="fu">c</span><span class="op">(</span><span class="st">"sandpaper"</span>, <span class="st">"varnish"</span>, <span class="st">"pegboard"</span>, <span class="st">"tinkr"</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
-<div id="prereq1" class="callout prereq">
+<div id="for-linux-users" class="callout prereq">
 <div class="callout-square">
 <i class="callout-icon" data-feather="check"></i>
 </div>
 <div id="for-linux-users" class="callout-inner">
-<h3 class="callout-title">For Linux Users<a class="anchor" aria-label="anchor" href="#prereq1"></a>
+<h3 class="callout-title">For Linux Users<a class="anchor" aria-label="anchor" href="#for-linux-users"></a>
 </h3>
 <div class="callout-content">
 <p>If you have a linux system, you may need to install C libraries that the workbench dependencies require (such as libxml). A set of dependencies for ubuntu can be found using the following command:</p>
@@ -579,12 +579,12 @@ Git</li>
 <span><span class="co">#&gt;     └── docs</span></span></code></pre>
 </div>
 <p>If everything looks ok (e.g. no warnings or errors), we can go ahead and open the lesson repository as a project in RStudio (<em>File</em> -&gt; <em>Open Project…</em>).</p>
-<div id="callout4" class="callout callout">
+<div id="having-trouble" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="having-trouble" class="callout-inner">
-<h3 class="callout-title">Having Trouble?<a class="anchor" aria-label="anchor" href="#callout4"></a>
+<h3 class="callout-title">Having Trouble?<a class="anchor" aria-label="anchor" href="#having-trouble"></a>
 </h3>
 <div class="callout-content">
 <p>If you are having trouble installing a particular component of the workbench, we have created an RStudio cloud instance that you can use to follow along with the desktop commands: <a href="https://rstudio.cloud/content/4442910" class="external-link uri">https://rstudio.cloud/content/4442910</a>.</p>
@@ -665,12 +665,12 @@ Git</li>
 <span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="in">)</span></span>
 <span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre>
 </div>
-<div id="challenge1" class="callout challenge">
+<div id="change-the-colour-of-the-pyramid" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="change-the-colour-of-the-pyramid" class="callout-inner">
-<h3 class="callout-title">Change the colour of the pyramid<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+<h3 class="callout-title">Change the colour of the pyramid<a class="anchor" aria-label="anchor" href="#change-the-colour-of-the-pyramid"></a>
 </h3>
 <div class="callout-content">
 <p>Following along with the workshop leads, and working in RStudio on the local copy of your repository, follow these steps:</p>
@@ -692,7 +692,7 @@ Git</li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">MARKDOWN<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -760,7 +760,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="../LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.11.16" class="external-link">sandpaper (0.11.16)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.12.0" class="external-link">sandpaper (0.12.0)</a>,
         <a href="https://github.com/carpentries/pegboard" class="external-link">pegboard (0.5.3)</a>,
       and <a href="https://github.com/carpentries/varnish/tree/0.2.16" class="external-link">varnish (0.2.16)</a>.</p>
 			</div>
@@ -784,7 +784,7 @@ any links that you are not going to use.
   "identifier": "https://tobyhodges.github.io/rse22-workshop-carpentries-workbench/instructor/workbench.html",
   "dateCreated": "2022-07-20",
   "dateModified": "2022-09-05",
-  "datePublished": "2023-05-16"
+  "datePublished": "2023-05-23"
 }
 
   </script><script>
