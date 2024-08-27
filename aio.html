@@ -282,10 +282,10 @@
             </div>
 
             <hr class="half-width">
-<div class="accordion accordion-flush resources" id="accordionFlush12">
+<div class="accordion accordion-flush lesson-resources" id="accordionFlush12">
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingTwelve">
-                  <button class="accordion-button collapsed" id="resources" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwelve" aria-expanded="false" aria-controls="flush-collapseTwelve">
+                  <button class="accordion-button collapsed" id="lesson-resources" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwelve" aria-expanded="false" aria-controls="flush-collapseTwelve">
                     RESOURCES
                   </button>
                 </h2>
@@ -307,7 +307,7 @@
                 </div>
               </div>
             </div>
-            <hr class="half-width resources">
+            <hr class="half-width lesson-resources">
 <a href="aio.html">See all in one page</a>
 
 
@@ -369,7 +369,6 @@
 </div>
 </div>
 <section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
-<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
 <hr class="half-width">
 <p>Welcome to this workshop at the Research Software Engineers conference 2022.</p>
@@ -411,7 +410,6 @@
 </tr>
 </tbody>
 </table></section><section><h2 class="section-heading" id="the-carpentries">The Carpentries<a class="anchor" aria-label="anchor" href="#the-carpentries"></a>
-<a class="anchor" aria-label="anchor" href="#the-carpentries"></a>
 </h2>
 <hr class="half-width">
 <figure><img src="fig/TheCarpentries.svg" alt="The Carpentries" class="figure mx-auto d-block"></figure><p><a href="https://carpentries.org/" class="external-link">The Carpentries</a> builds global capacity in essential data and computational skills for conducting efficient, open, and reproducible research. We train and foster an active, inclusive, diverse community of learners and instructors that promotes and models the importance of software and data in research. We collaboratively develop openly-available lessons and deliver these lessons using evidence-based teaching practices. We focus on people conducting and supporting research.</p>
@@ -425,7 +423,6 @@
 <strong>Trainers</strong>, who teach and certify new Instructors through our Instructor Training program;</li>
 <li>and <strong>Curriculum Advisors</strong>, who provide high-level guidance on the overall direction of our curricula.</li>
 </ul></section><section><h2 class="section-heading" id="lesson-development-in-the-carpentries">Lesson Development in The Carpentries<a class="anchor" aria-label="anchor" href="#lesson-development-in-the-carpentries"></a>
-<a class="anchor" aria-label="anchor" href="#lesson-development-in-the-carpentries"></a>
 </h2>
 <hr class="half-width">
 <p>Our official lessons are divided across three Lesson Programs: Software Carpentry, Library Carpentry, and Data Carpentry. Each of these programs has a slightly different focus, either in their target audience or in the skills they teach, but all share a common goal of promoting efficiency and reproducibility in research and research-related disciplines.</p>
@@ -433,7 +430,6 @@
 <figure><img src="fig/life-cycle.svg" alt="Schematic of a life cycle for lessons that includes four stages: pre-alpha, where a lesson is being designed and drafted for the first time; alpha, where the lesson is tested in pilot workshops by its authors; beta, where the lesson is tested in pilot workshops by other instructors; and stable, where the lesson has been thoroughly tested and can be relied upon by other instructors to be ready to teach and unlikely to undergo significant changes without warning. Stable lessons can be peer reviewed in The Carpentries Lab and can join the Lab or one of The Carpentries official lesson programs." class="figure mx-auto d-block"></figure><p>The Carpentries Incubator forms the first part of a pathway for the development of lessons, which can lead to open peer review and publication, and/or adoption by one of The Carpentries lesson programs as a new official lesson.</p>
 <p>We are not going to talk much about that pathway for lesson development today, because we are also presenting a poster on exactly that topic at this conference. Come and find us there during the poster session - or any other time during the week - to talk more about our systems and processes for lesson development, review, and publication!</p>
 </section><section><h2 class="section-heading" id="the-carpentries-workbench">The Carpentries Workbench<a class="anchor" aria-label="anchor" href="#the-carpentries-workbench"></a>
-<a class="anchor" aria-label="anchor" href="#the-carpentries-workbench"></a>
 </h2>
 <hr class="half-width">
 <p>TODO</p>
@@ -442,8 +438,7 @@
 <i class="callout-icon" data-feather="key"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
-</h3>
+<h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
 <li>The Carpentries is a global community teaching software and data skills. Their primary audience is researchers and librarians.</li>
@@ -497,7 +492,6 @@ any links that you are not going to use.
 </div>
 </div>
 <section><h2 class="section-heading" id="lesson-design">Lesson Design<a class="anchor" aria-label="anchor" href="#lesson-design"></a>
-<a class="anchor" aria-label="anchor" href="#lesson-design"></a>
 </h2>
 <hr class="half-width">
 <p>Training can come in many forms - from one-on-one mentoring, through semester-long modules, to massive online courses taken by thousands of people on their own schedule.</p>
@@ -505,7 +499,6 @@ any links that you are not going to use.
 <p>All training should be centered on the learners - who are they and what do they want to learn? What do you want to make sure they know how to do by the time they leave your lesson? That perspective can take a bit of getting used to: we must be prepared to forget about the things we most enjoy teaching, and try to focus instead on the things that are most important for learners to understand and be able to do.This is even more true in a short training, where we must always make compromises due to limited time in a workshop.</p>
 <p>To help guide us in developing a lesson that will be most effective in teaching learners what we really want them to know, we try to adopt an approach to lesson design that emphasises learner outcomes. When used effectively, this approach to lesson design also helps us to identify what we can cut out if we find that we need to make space or fit the lesson into a shorter timeframe.</p>
 </section><section><h2 class="section-heading" id="backwards-design">Backwards Design<a class="anchor" aria-label="anchor" href="#backwards-design"></a>
-<a class="anchor" aria-label="anchor" href="#backwards-design"></a>
 </h2>
 <hr class="half-width">
 <p>We recommend that lesson developers follow an iterative process to design, develop, and evaluate their lessons. Based on a paradigm described in education theory, called <em>Nicholl’s Five Phases</em>, this approach is often referred to as <em>backwards design</em>.</p>
@@ -530,8 +523,7 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="example-exercise-fill-in-the-blanks" class="callout-inner">
-<h3 class="callout-title">Example Exercise: Fill in the Blanks<a class="anchor" aria-label="anchor" href="#example-exercise-fill-in-the-blanks"></a>
-</h3>
+<h3 class="callout-title">Example Exercise: Fill in the Blanks</h3>
 <div class="callout-content">
 <p>The code block below is intended to define a function, <code>shout</code>, which accepts a single string argument and returns a converted version of that string in all upper case with an exclamation point at the end. For example, <code>shout("meet me at the reservoir")</code> should return <code>"MEET ME AT THE RESERVOIR!"</code> and <code>shout("Mary, there is no hope for us")</code> should return <code>"MARY, THERE IS NO HOPE FOR US!"</code>.</p>
 <p>Fill in the blanks in the code block to complete the function definition.</p>
@@ -550,7 +542,7 @@ any links that you are not going to use.
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -570,8 +562,7 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="more-exercise-formats" class="callout-inner">
-<h3 class="callout-title">More Exercise Formats<a class="anchor" aria-label="anchor" href="#more-exercise-formats"></a>
-</h3>
+<h3 class="callout-title">More Exercise Formats</h3>
 <div class="callout-content">
 <p>Here are three more exercise formats. Can you suggest some action verbs these formats would be good for assessing?</p>
 <p><strong>1. Parsons Problem</strong></p>
@@ -588,8 +579,7 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="example-exercise-parsons-problem" class="callout-inner">
-<h3 class="callout-title">Example Exercise: Parsons Problem<a class="anchor" aria-label="anchor" href="#example-exercise-parsons-problem"></a>
-</h3>
+<h3 class="callout-title">Example Exercise: Parsons Problem</h3>
 <div class="callout-content">
 <p>The lines of code below are intended to normalise the holdout set or, if the user has chosen to skip normalisation, to check whether the holdout set has already been normalised and exit the program if not.</p>
 <p>However, the order of these lines has been scrambled. Reorganise the lines to make the program run correctly. You may wish to add some indentation to help make the code more readable.</p>
@@ -618,7 +608,7 @@ any links that you are not going to use.
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -647,8 +637,7 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="example-exercise-theme-variations" class="callout-inner">
-<h3 class="callout-title">Example Exercise: Theme &amp; Variations<a class="anchor" aria-label="anchor" href="#example-exercise-theme-variations"></a>
-</h3>
+<h3 class="callout-title">Example Exercise: Theme &amp; Variations</h3>
 <div class="callout-content">
 <p>This program selects the pixels in a rectangular area at the top-left of the input image, and sets the intensity of those pixels to zero.</p>
 <p>Adjust the program so that it instead selects an area at the bottom-right of the image.</p>
@@ -666,7 +655,7 @@ any links that you are not going to use.
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -683,8 +672,7 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="example-exercise-minimal-fix" class="callout-inner">
-<h3 class="callout-title">Example Exercise: Minimal Fix<a class="anchor" aria-label="anchor" href="#example-exercise-minimal-fix"></a>
-</h3>
+<h3 class="callout-title">Example Exercise: Minimal Fix</h3>
 <div class="callout-content">
 <p>This function is supposed to test whether a number lies within a range. Make one small change so that it actually does so.</p>
 <div class="codewrapper sourceCode" id="cb7">
@@ -707,7 +695,7 @@ any links that you are not going to use.
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -727,12 +715,10 @@ any links that you are not going to use.
 <figure><img src="fig/minimal-fix-example.png" alt="a screenshot of the minimal fix example exercise written above, included for display purposes." class="figure mx-auto d-block"><figcaption>An example of a minimal fix exercise.</figcaption></figure><p>For more ideas about exercise formats, read <a href="http://teachtogether.tech/en/index.html#s:exercises" class="external-link">the <em>Exercise Types</em> chapter of <em>Teaching Tech Together</em> by Greg Wilson</a>.</p>
 </div>
 </section><section><h2 class="section-heading" id="collaborative-lesson-development-training">Collaborative Lesson Development Training<a class="anchor" aria-label="anchor" href="#collaborative-lesson-development-training"></a>
-<a class="anchor" aria-label="anchor" href="#collaborative-lesson-development-training"></a>
 </h2>
 <hr class="half-width">
 <figure><img src="fig/CLDT-hex-sticker.png" alt="" class="figure mx-auto d-block"><figcaption>The Carpentries Collaborative Lesson Development Training</figcaption></figure><p>We have begun teaching all of this in a lot more detail in a new program of <a href="https://carpentries.github.io/lesson-development-training/" class="external-link">Collaborative Lesson Development Training</a>. If you are planning to begin developing a new lesson, and especially if you are interested in doing so using the open source infrastructure we are presenting in this workshop, I recommend you look out for this training.</p>
 </section><section><h2 class="section-heading" id="the-carpentries-incubator">The Carpentries Incubator<a class="anchor" aria-label="anchor" href="#the-carpentries-incubator"></a>
-<a class="anchor" aria-label="anchor" href="#the-carpentries-incubator"></a>
 </h2>
 <hr class="half-width">
 <figure><img src="fig/incubator-hex.svg" alt="" style='width:"20%"; padding:10px' class="figure mx-auto d-block"><figcaption>The Carpentries Incubator is where the community collaborates on new lessons.</figcaption></figure><p>In The Carpentries Incubator, we provide support for collaborative lesson development, including:</p>
@@ -746,7 +732,6 @@ any links that you are not going to use.
 <p>If you would like to find out about the lessons that are already under development in the Incubator, visit our <a href="https://carpentries.org/community-lessons/" class="external-link">Community Lessons listing</a>. To propose a new lesson for the Incubator, head to our <a href="https://github.com/carpentries-incubator/proposals/" class="external-link">Proposals repository</a>, open a new issue, and answer the questions in the issue template.</p>
 <p>To find out more about the Incubator and the pathway that a new lesson can take through it and out the other side, find our poster at the conference.</p>
 </section><section><h2 class="section-heading" id="how-can-rses-help">How can RSEs Help?<a class="anchor" aria-label="anchor" href="#how-can-rses-help"></a>
-<a class="anchor" aria-label="anchor" href="#how-can-rses-help"></a>
 </h2>
 <hr class="half-width">
 <p>Research Software Engineers are more aware than most people about the skills that researchers and RSEs need, and upcoming developments that they should prepare for. This makes you well-placed to identify topics for lessons that could be developed. Indeed, RSEs often have teaching responsibilities, or choose to teach as an effective means of increasing capacity and the quality of research at their institutes.</p>
@@ -756,8 +741,7 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="key"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
-</h3>
+<h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
 <li>When designing a new lesson, we recommend starting by identifying your target audience, thinking about what they already know, and what you want them to be able to do by the end of the lesson.</li>
@@ -817,8 +801,7 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="check-square"></i>
 </div>
 <div id="check-your-setup" class="callout-inner">
-<h3 class="callout-title">Check your setup!<a class="anchor" aria-label="anchor" href="#check-your-setup"></a>
-</h3>
+<h3 class="callout-title">Check your setup!</h3>
 <div class="callout-content">
 <p>Before you work with this episode, make sure you have installed:</p>
 <ul class="task-list">
@@ -846,14 +829,12 @@ Git</li>
 </ul>
 <p>In this next part of the workshop, we will explore the new infrastructure for lessons - The Carpentries Workbench. In this section, you will learn about the key components of the Workbench and gain some hands-on experience of creating and editing a lesson website using the Workbench.</p>
 <section><h2 class="section-heading" id="github-pages">GitHub Pages<a class="anchor" aria-label="anchor" href="#github-pages"></a>
-<a class="anchor" aria-label="anchor" href="#github-pages"></a>
 </h2>
 <hr class="half-width">
 <p>From the beginning, Carpentries lessons have been freely available for all to use under a CC-BY license.</p>
 <p>The source of all The Carpentries lessons is made publicly-available in repositories on <a href="https://github.com/" class="external-link">GitHub</a>. By making our repositories public like this, we encourage others to help us maintain and improve our lessons, and make it as easy as possible for them to re-use and modify our lessons for their own purposes.</p>
 <p>Via a system called <strong>GitHub Pages</strong>, users can build and host websites from the files present in any repository on GitHub. For many years, this has been how The Carpentries presents its lesson websites to the world.</p>
 </section><section><h2 class="section-heading" id="using-the-carpentries-workbench">Using The Carpentries Workbench<a class="anchor" aria-label="anchor" href="#using-the-carpentries-workbench"></a>
-<a class="anchor" aria-label="anchor" href="#using-the-carpentries-workbench"></a>
 </h2>
 <hr class="half-width">
 <p>Starting in 2023, Carpentries lesson websites will be built with <a href="https://carpentries.github.io/sandpaper-docs/" class="external-link"><strong>The Carpentries Workbench</strong></a>, a toolkit that converts Markdown and RMarkdown files into the HTML that can be served by GitHub Pages.</p>
@@ -874,8 +855,7 @@ Git</li>
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="creating-a-new-lesson-repository" class="callout-inner">
-<h3 class="callout-title">Creating a new lesson repository<a class="anchor" aria-label="anchor" href="#creating-a-new-lesson-repository"></a>
-</h3>
+<h3 class="callout-title">Creating a new lesson repository</h3>
 <div class="callout-content">
 <p>Follow the steps demonstrated by the workshop lead:</p>
 <ol style="list-style-type: decimal">
@@ -920,8 +900,7 @@ Git</li>
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="and-the-rest" class="callout-inner">
-<h3 class="callout-title">… and the rest!<a class="anchor" aria-label="anchor" href="#and-the-rest"></a>
-</h3>
+<h3 class="callout-title">… and the rest!</h3>
 <div class="callout-content">
 <p>Most of these are source files for the content of our new lesson, but a few are accompanying files primarily intended for the repository itself rather than the lesson website. These are:</p>
 <ul>
@@ -949,8 +928,7 @@ Git</li>
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="which-branch-to-use" class="callout-inner">
-<h3 class="callout-title">Which branch to use?<a class="anchor" aria-label="anchor" href="#which-branch-to-use"></a>
-</h3>
+<h3 class="callout-title">Which branch to use?</h3>
 <div class="callout-content">
 <p>Although we configure GitHub Pages to serve the lesson website from the <code>gh-pages</code> branch, <strong>the default working branch for a lesson will be <code>main</code></strong>. For the rest of this training, you should add and edit files on <code>main</code>, and in future, when you open Pull Requests to update the lesson content, these should also be made to <code>main</code>. The <code>gh-pages</code> branch should never be modified by anyone other than the automated actions-user account.</p>
 </div>
@@ -969,8 +947,7 @@ Git</li>
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="practice-with-config.yaml-5-minutes" class="callout-inner">
-<h3 class="callout-title">Practice with <code>config.yaml</code> (5 minutes)<a class="anchor" aria-label="anchor" href="#practice-with-config.yaml-5-minutes"></a>
-</h3>
+<h3 class="callout-title">Practice with <code>config.yaml</code> (5 minutes)</h3>
 <div class="callout-content">
 <p>Complete the configuration of your lesson by adjusting the following fields in <code>config.yaml</code>:</p>
 <ul>
@@ -992,7 +969,7 @@ Git</li>
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="improving-the-readme.md" class="callout-inner">
-<h3 class="callout-title">Improving the <code>README.md</code><a class="anchor" aria-label="anchor" href="#improving-the-readme.md"></a>
+<h3 class="callout-title">Improving the <code>README.md</code>
 </h3>
 <div class="callout-content">
 <p>The <code>README.md</code> file is the “front page” of your lesson repository on GitHub, and is written in Markdown. You should use it to provide basic information about the project, for anyone who finds their way to the source files for your lesson. Although we do not have time in this workshop, if you intend to keep working on your lesson when you leave, we recommend that you take a few minutes to update the README with some basic information about the project, e.g.:</p>
@@ -1007,7 +984,6 @@ Git</li>
 </div>
 </div>
 </section><section><h2 class="section-heading" id="working-with-a-local-copy">Working with a Local Copy<a class="anchor" aria-label="anchor" href="#working-with-a-local-copy"></a>
-<a class="anchor" aria-label="anchor" href="#working-with-a-local-copy"></a>
 </h2>
 <hr class="half-width">
 <p>Before we explore the source files for the content of a lesson, we will make a copy of the new lesson repository on our local system. To do so, we need to <em>clone</em> the repository to a place on our system where we can find it easily.</p>
@@ -1020,7 +996,6 @@ Git</li>
 </div>
 <p>Now that we have a copy of the lesson repository locally, we need to make sure that we have everything we need to continue working with that repository on our own system.</p>
 </section><section><h2 class="section-heading" id="installing-the-workbench">Installing the Workbench<a class="anchor" aria-label="anchor" href="#installing-the-workbench"></a>
-<a class="anchor" aria-label="anchor" href="#installing-the-workbench"></a>
 </h2>
 <hr class="half-width">
 <ol style="list-style-type: decimal">
@@ -1045,8 +1020,7 @@ Git</li>
 <i class="callout-icon" data-feather="check"></i>
 </div>
 <div id="for-linux-users" class="callout-inner">
-<h3 class="callout-title">For Linux Users<a class="anchor" aria-label="anchor" href="#for-linux-users"></a>
-</h3>
+<h3 class="callout-title">For Linux Users</h3>
 <div class="callout-content">
 <p>If you have a linux system, you may need to install C libraries that the workbench dependencies require (such as libxml). A set of dependencies for ubuntu can be found using the following command:</p>
 <div class="codewrapper sourceCode" id="cb3">
@@ -1134,15 +1108,13 @@ Git</li>
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="having-trouble" class="callout-inner">
-<h3 class="callout-title">Having Trouble?<a class="anchor" aria-label="anchor" href="#having-trouble"></a>
-</h3>
+<h3 class="callout-title">Having Trouble?</h3>
 <div class="callout-content">
 <p>If you are having trouble installing a particular component of the workbench, we have created an RStudio cloud instance that you can use to follow along with the desktop commands: <a href="https://rstudio.cloud/content/4442910" class="external-link uri">https://rstudio.cloud/content/4442910</a>.</p>
 </div>
 </div>
 </div>
 </section><section><h2 class="section-heading" id="previewing-the-lesson">Previewing the Lesson<a class="anchor" aria-label="anchor" href="#previewing-the-lesson"></a>
-<a class="anchor" aria-label="anchor" href="#previewing-the-lesson"></a>
 </h2>
 <hr class="half-width">
 <p>To see how the lesson website looks with this new episode added, we can build and serve a local version of the site, which will be automatically updated whenever we make changes to the source files.</p>
@@ -1154,7 +1126,6 @@ Git</li>
 </div>
 <p>After a short wait, a preview of the built lesson site should pop into the <em>Viewer</em> panel of RStudio. (You can “pop” it out into a web browser tab by clicking the little <em>Show in new window</em> button near the top of the Viewer panel.)</p>
 </section><section><h2 class="section-heading" id="lesson-content-source-files">Lesson Content Source Files<a class="anchor" aria-label="anchor" href="#lesson-content-source-files"></a>
-<a class="anchor" aria-label="anchor" href="#lesson-content-source-files"></a>
 </h2>
 <hr class="half-width">
 <p>Using the <em>Files</em> tab within RStudio, we can begin to look at where the content of a lesson is stored and written.</p>
@@ -1207,12 +1178,10 @@ Git</li>
 <p>When you call this function, you should see a new file called <code>02-next-episode.Rmd</code> appear in the <code>episodes</code> folder. It will have the same example content as <code>01-introduction.Rmd</code> but with a different title in the YAML header, based on the name you specified for the new episode in the call to <code>create_episode</code>.</p>
 </div>
 </section><section><h2 class="section-heading" id="pushing-to-github">Pushing to GitHub<a class="anchor" aria-label="anchor" href="#pushing-to-github"></a>
-<a class="anchor" aria-label="anchor" href="#pushing-to-github"></a>
 </h2>
 <hr class="half-width">
 <p>Push new episode back to github using either the Git tab in the top left pane or</p>
 </section><section><h2 class="section-heading" id="editing-an-episode">Editing an Episode<a class="anchor" aria-label="anchor" href="#editing-an-episode"></a>
-<a class="anchor" aria-label="anchor" href="#editing-an-episode"></a>
 </h2>
 <hr class="half-width">
 <p>We will use the code block and output below to demonstrate one of the new features provided by The Carpentries Workbench: automated feedback about changes to the rendered lesson content that would be made by a pull request.</p>
@@ -1233,8 +1202,7 @@ Git</li>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="change-the-colour-of-the-pyramid" class="callout-inner">
-<h3 class="callout-title">Change the colour of the pyramid<a class="anchor" aria-label="anchor" href="#change-the-colour-of-the-pyramid"></a>
-</h3>
+<h3 class="callout-title">Change the colour of the pyramid</h3>
 <div class="callout-content">
 <p>Following along with the workshop leads, and working in RStudio on the local copy of your repository, follow these steps:</p>
 <ol style="list-style-type: decimal">
@@ -1279,8 +1247,7 @@ Git</li>
 <i class="callout-icon" data-feather="key"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
-</h3>
+<h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
 <li>Lesson sites are built from source repositories with GitHub Pages.</li>
@@ -1330,7 +1297,6 @@ any links that you are not going to use.
 </div>
 </div>
 <section><h2 class="section-heading" id="valuing-all-contributions">Valuing All Contributions<a class="anchor" aria-label="anchor" href="#valuing-all-contributions"></a>
-<a class="anchor" aria-label="anchor" href="#valuing-all-contributions"></a>
 </h2>
 <hr class="half-width">
 <ul>
@@ -1346,8 +1312,7 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="what-kinds-of-contribution-can-there-be" class="callout-inner">
-<h3 class="callout-title">What kinds of contribution can there be?<a class="anchor" aria-label="anchor" href="#what-kinds-of-contribution-can-there-be"></a>
-</h3>
+<h3 class="callout-title">What kinds of contribution can there be?</h3>
 <div class="callout-content">
 <ul>
 <li>take a few minutes to think about the process for a stable lesson to exist, from start to finish</li>
@@ -1365,8 +1330,7 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="give-us-your-feedback" class="callout-inner">
-<h3 class="callout-title">Give us your feedback<a class="anchor" aria-label="anchor" href="#give-us-your-feedback"></a>
-</h3>
+<h3 class="callout-title">Give us your feedback</h3>
 <div class="callout-content">
 <p>Using more sticky notes, give us feedback/your ideas on the following, according to sticky note colour:</p>
 <ul>
@@ -1386,8 +1350,7 @@ any links that you are not going to use.
 <i class="callout-icon" data-feather="key"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
-</h3>
+<h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
 <li>The Carpentries values all contributions.</li>
@@ -1425,7 +1388,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.5" class="external-link">sandpaper (0.16.5)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.6" class="external-link">pegboard (0.7.6)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.3" class="external-link">varnish (1.0.3)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.6" class="external-link">sandpaper (0.16.6)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.6" class="external-link">pegboard (0.7.6)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.4" class="external-link">varnish (1.0.4)</a></p>
 			</div>
 		</footer>
 </div> <!-- / div.container -->
@@ -1448,8 +1411,8 @@ any links that you are not going to use.
   "url": "https://tobyhodges.github.io/rse22-workshop-carpentries-workbench/aio.html",
   "identifier": "https://tobyhodges.github.io/rse22-workshop-carpentries-workbench/aio.html",
   "dateCreated": "2022-07-20",
-  "dateModified": "2024-08-20",
-  "datePublished": "2024-08-20"
+  "dateModified": "2024-08-27",
+  "datePublished": "2024-08-27"
 }
 
   </script><script>
